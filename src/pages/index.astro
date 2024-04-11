@@ -7,12 +7,13 @@ import Card from "../components/Card.astro";
   <main>
     <section>
       <div class="content">
-        <h1>Honkai Star Rail</h1>
-		<h2>Action Value Calculator</h2>
+        <h1>Action Value Calculator</h1>
+
+		<hr>
 
         <form id="actionValueCalculator">
           <div class="form-section">
-            <h3>Character's base Speed</h3>
+            <h3>1. Choose the base speed</h3>
             <div>
               <label for="character">
                 <span class="svg-container">
@@ -37,14 +38,14 @@ import Card from "../components/Card.astro";
               <input
                 type="number"
                 id="character"
-                value="100"
+                value="0"
                 min="1"
                 max="200"
               />
             </div>
           </div>
           <div class="form-section">
-            <h3>Add bonuses (optional)</h3>
+            <h3>2. Add bonuses <span class="optional">(optional)</span></h3>
             <div>
               <label for="flatSpeed">
                 <span class="svg-container">
@@ -64,12 +65,12 @@ import Card from "../components/Card.astro";
                     ></svg
                   >
                 </span>
-                Flat Speed
+                Flat bonus
               </label>
               <input
                 type="number"
                 id="flatSpeed"
-                value="40"
+                value="0"
               />
             </div>
             <div>
@@ -86,23 +87,37 @@ import Card from "../components/Card.astro";
                     ></path></svg
                   >
                 </span>
-                Percent Speed
+                Percent bonus
               </label>
               <input
                 type="number"
                 id="percentSpeed"
-                value="20"
+                value="0"
               />
             </div>
           </div>
           <div class="form-section">
-            <h3>Choose the number of cycles</h3>
+            <h3>3. Choose the number of cycles</h3>
             <div>
-              <label for="cycles">Total cycles</label>
+              <label for="cycles">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="m21.82 15.42l-2.5 4.33c-.49.86-1.4 1.31-2.32 1.25h-2v2l-2.5-4.5L15 14v2h2.82l-2.22-3.85l4.33-2.5l1.8 3.12c.52.77.59 1.8.09 2.65M9.21 3.06h5c.98 0 1.83.57 2.24 1.39l1 1.74l1.73-1l-2.64 4.41l-5.15.09l1.73-1l-1.41-2.45l-2.21 3.85l-4.34-2.5l1.8-3.12c.41-.83 1.26-1.41 2.25-1.41m-4.16 16.7l-2.5-4.33c-.49-.85-.42-1.87.09-2.64l1-1.73l-1.73-1l5.14.08l2.65 4.42l-1.73-1L6.56 16H11v5H7.4a2.51 2.51 0 0 1-2.35-1.24"
+                    ></path></svg
+                  >
+                </span>
+                Total cycles
+              </label>
               <input
                 type="number"
                 id="cycles"
-                value="4"
+                value="0"
                 min="0"
                 max="8"
               />
@@ -133,9 +148,19 @@ import Card from "../components/Card.astro";
     place-items: center;
   }
 
-  h1, h2 {
-	color: hsl(var(--important));
-	text-align: center;
+  h1,
+  h2 {
+    color: hsl(var(--important));
+    text-align: center;
+  }
+
+  h3 {
+    color: hsl(var(--text) / 0.9);
+    margin-block-end: 0.25em;
+  }
+
+  hr {
+	border-color: hsl(var(--dark-700));
   }
 
   .content {
@@ -147,16 +172,33 @@ import Card from "../components/Card.astro";
   .content form {
     display: flex;
     flex-wrap: wrap;
+	gap: .25rem;
+  }
+
+  form > :last-child {
+    margin-block-start: 1rem;
   }
 
   .form-section {
     flex: 1 0 100%;
   }
 
+  .form-section > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .form-section > div:has(input:is(:focus, :focus-visible)) label {
+    color: hsl(var(--important));
+    transition: color 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
   .form-section label {
-    display: inline-flex;
-	align-items: center;
-	gap: .25rem;
+    flex: 1 0 13ch;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
     color: hsl(var(--dark-900));
     margin-block-end: 0.25rem;
   }
@@ -165,7 +207,6 @@ import Card from "../components/Card.astro";
     width: 100%;
     height: 3ch;
 
-    margin-block-end: 0.75rem;
     padding-inline-start: 0.5rem;
     border: 0;
     border-radius: 0.25rem;
@@ -197,6 +238,7 @@ import Card from "../components/Card.astro";
     font-weight: 900;
     font-size: 1rem;
     text-transform: uppercase;
+	cursor: pointer;
   }
 
   #submit:is(:active) {
@@ -206,5 +248,5 @@ import Card from "../components/Card.astro";
 </style>
 
 <script>
-	import '../js/simpleAVCalculator.js';
+  import "../js/simpleAVCalculator.js";
 </script>
