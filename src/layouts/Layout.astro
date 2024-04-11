@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +8,146 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Astro description"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap");
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  :root {
+    --text: 0 0% 91%;
+    --background: 0 0% 5%;
+
+    --dark-100: 0 0% 11%;
+    --dark-300: 0 0% 17%;
+    --dark-500: 0 0% 23%;
+    --dark-700: 0 0% 29%;
+    --dark-900: 0 0% 35%;
+
+    --important: 49 85% 65%;
+
+    --important-100: 49 85% 65%;
+    --important-300: 49 85% 71%;
+    --important-500: 49 85% 77%;
+    --important-700: 49 85% 83%;
+    --important-900: 49 85% 89%;
+
+    --tag-version: 0 0% 70%;
+    --tag-krystal: 200 50% 70%;
+    --tag-type: 0 50% 70%;
+    --tag-checked: var(--important);
+  }
+  ::-webkit-scrollbar {
+    width: 1rem;
+    background-color: transparent;
+  }
+
+  :hover::-webkit-scrollbar {
+    background-color: hsl(var(--dark-300));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--text) / 0.7);
+  }
+
+  ::selection {
+    background-color: hsl(var(--text));
+    color: hsl(var(--background));
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding-block: 5rem;
+
+    color: hsl(var(--text));
+    background: hsl(var(--background));
+    font-family: "DM Sans", sans-serif;
+
+    background-image: url(/hsr-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: fixed;
+    overflow-y: scroll;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: hsl(var(--important));
+  }
+
+  h2 {
+    margin-block-start: 0.5rem;
+  }
+
+  img {
+    display: block;
+  }
+
+  svg {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  button {
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  .important {
+    color: hsl(var(--important));
+    font-weight: 700;
+  }
+
+  .svg-container {
+    width: 20px;
+    height: 20px;
+  }
 </style>
