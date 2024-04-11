@@ -236,6 +236,7 @@ import Card from "../components/Card.astro";
     font-size: .9rem;
     font-weight: 900;
     cursor: pointer;
+    user-select: none;
   }
 
   .cycles-preset:is(:active) {
@@ -265,9 +266,8 @@ import Card from "../components/Card.astro";
   }
 
   .form-section input:is(:focus, :focus-visible) {
-    outline: none;
-    outline: 3px solid hsl(var(--important-100));
-    outline-offset: 3px;
+    /* outline: none; */
+    background-color: hsl(var(--important-700));
   }
 
   .form-section label:is(.focused) {
