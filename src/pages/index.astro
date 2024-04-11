@@ -3,44 +3,120 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Action Value Calculator">
   <main>
-	<div>
-		<div class="content">
-		<h1>Honkai Star Rail Action Value Calculator</h1>
-	
-		<form id="actionValueCalculator">
-		  <div class="form-section">
-			<h2>Character's base Speed</h2>
-			<div>
-			  <label for="character"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4" d="M44 6H28v8h16zm0 8v22c0 1.11-.89 2-2 2H8c-2.21 0-4-1.79-4-4v-6c0-4.42 3.58-8 8-8h16v-6zM14 26v-6m7 6v-6m-6 22v-4m-7 4v-4m14 4v-4m12 4v-4m7 4v-4M23 20H12"/></svg> Base speed</label>
-			  <input type="number" id="character" value="100" min="1" max="200">
-			</div>
-		  </div>
-		  <div class="form-section">
-			<h2>Add bonuses (optional)</h2>
-			<div>
-			  <label for="flatSpeed"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3.5h4v4"/><path d="M13.5 3.5L7.85 9.15a.5.5 0 0 1-.7 0l-2.3-2.3a.5.5 0 0 0-.7 0L.5 10.5"/></g></svg> Flat Speed</label>
-			  <input type="number" id="flatSpeed" value="40">
-			</div>
-			<div>
-			  <label for="percentSpeed"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 11q-1.45 0-2.475-1.025T4 7.5t1.025-2.475T7.5 4t2.475 1.025T11 7.5T9.975 9.975T7.5 11m0-2q.625 0 1.063-.437T9 7.5t-.437-1.062T7.5 6t-1.062.438T6 7.5t.438 1.063T7.5 9m9 11q-1.45 0-2.475-1.025T13 16.5t1.025-2.475T16.5 13t2.475 1.025T20 16.5t-1.025 2.475T16.5 20m0-2q.625 0 1.063-.437T18 16.5t-.437-1.062T16.5 15t-1.062.438T15 16.5t.438 1.063T16.5 18M5.4 20L4 18.6L18.6 4L20 5.4z"/></svg> Percent Speed</label>
-			  <input type="number" id="percentSpeed" value="20">
-			</div>
-		  </div>
-		  <div class="form-section">
-			<h2>Choose the number of cycles</h2>
-			<div>
-			  <label for="cycles">Total cycles</label>
-			  <input type="number" id="cycles" value="4" min="0" max="8">
-			</div>
-		  </div>
-		  <input type="button" value="Calculate" id="submit">
-		</form>
-	
-		<p id="result"></p>
-	  </div>
-	  </div>
+    <section>
+      <div class="content">
+        <h1>Honkai Star Rail Action Value Calculator</h1>
+
+        <form id="actionValueCalculator">
+          <div class="form-section">
+            <h2>Character's base Speed</h2>
+            <div>
+              <label for="character">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 48 48"
+                    ><path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="2"
+                      stroke-width="4"
+                      d="M44 6H28v8h16zm0 8v22c0 1.11-.89 2-2 2H8c-2.21 0-4-1.79-4-4v-6c0-4.42 3.58-8 8-8h16v-6zM14 26v-6m7 6v-6m-6 22v-4m-7 4v-4m14 4v-4m12 4v-4m7 4v-4M23 20H12"
+                    ></path></svg
+                  >
+                </span>
+                Base speed
+              </label>
+              <input
+                type="number"
+                id="character"
+                value="100"
+                min="1"
+                max="200"
+              />
+            </div>
+          </div>
+          <div class="form-section">
+            <h2>Add bonuses (optional)</h2>
+            <div>
+              <label for="flatSpeed">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 14 14"
+                    ><g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><path d="M9.5 3.5h4v4"></path><path
+                        d="M13.5 3.5L7.85 9.15a.5.5 0 0 1-.7 0l-2.3-2.3a.5.5 0 0 0-.7 0L.5 10.5"
+                      ></path></g
+                    ></svg
+                  >
+                </span>
+                Flat Speed
+              </label>
+              <input
+                type="number"
+                id="flatSpeed"
+                value="40"
+              />
+            </div>
+            <div>
+              <label for="percentSpeed">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="M7.5 11q-1.45 0-2.475-1.025T4 7.5t1.025-2.475T7.5 4t2.475 1.025T11 7.5T9.975 9.975T7.5 11m0-2q.625 0 1.063-.437T9 7.5t-.437-1.062T7.5 6t-1.062.438T6 7.5t.438 1.063T7.5 9m9 11q-1.45 0-2.475-1.025T13 16.5t1.025-2.475T16.5 13t2.475 1.025T20 16.5t-1.025 2.475T16.5 20m0-2q.625 0 1.063-.437T18 16.5t-.437-1.062T16.5 15t-1.062.438T15 16.5t.438 1.063T16.5 18M5.4 20L4 18.6L18.6 4L20 5.4z"
+                    ></path></svg
+                  >
+                </span>
+                Percent Speed
+              </label>
+              <input
+                type="number"
+                id="percentSpeed"
+                value="20"
+              />
+            </div>
+          </div>
+          <div class="form-section">
+            <h2>Choose the number of cycles</h2>
+            <div>
+              <label for="cycles">Total cycles</label>
+              <input
+                type="number"
+                id="cycles"
+                value="4"
+                min="0"
+                max="8"
+              />
+            </div>
+          </div>
+          <input
+            type="button"
+            value="Calculate"
+            id="submit"
+          />
+        </form>
+
+        <p id="result"></p>
+      </div>
+    </section>
   </main>
 </Layout>
 
@@ -49,11 +125,11 @@ import Card from "../components/Card.astro";
     display: grid;
     place-items: center;
     min-height: 100%;
-	padding-block: 5rem;
+    padding-block: 5rem;
     background-color: hsl(var(--background) / 0.9);
   }
 
-  main > div {
+  section {
     display: grid;
     place-items: center;
 
@@ -130,3 +206,7 @@ import Card from "../components/Card.astro";
     box-shadow: none;
   }
 </style>
+
+<script>
+	import '../js/simpleAVCalculator.js';
+</script>
