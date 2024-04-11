@@ -7,11 +7,12 @@ import Card from "../components/Card.astro";
   <main>
     <section>
       <div class="content">
-        <h1>Honkai Star Rail Action Value Calculator</h1>
+        <h1>Honkai Star Rail</h1>
+		<h2>Action Value Calculator</h2>
 
         <form id="actionValueCalculator">
           <div class="form-section">
-            <h2>Character's base Speed</h2>
+            <h3>Character's base Speed</h3>
             <div>
               <label for="character">
                 <span class="svg-container">
@@ -43,7 +44,7 @@ import Card from "../components/Card.astro";
             </div>
           </div>
           <div class="form-section">
-            <h2>Add bonuses (optional)</h2>
+            <h3>Add bonuses (optional)</h3>
             <div>
               <label for="flatSpeed">
                 <span class="svg-container">
@@ -95,7 +96,7 @@ import Card from "../components/Card.astro";
             </div>
           </div>
           <div class="form-section">
-            <h2>Choose the number of cycles</h2>
+            <h3>Choose the number of cycles</h3>
             <div>
               <label for="cycles">Total cycles</label>
               <input
@@ -135,6 +136,11 @@ import Card from "../components/Card.astro";
 
     height: 100%;
     width: 100%;
+  }
+
+  h1, h2 {
+	color: hsl(var(--important));
+	text-align: center;
   }
 
   .content {
