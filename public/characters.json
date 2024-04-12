@@ -1,0 +1,387 @@
+[
+    {
+        "character": "acheron",
+        "path": "nihility",
+        "element": "lightning",
+        "image": "acheron",
+        "stars": "five",
+        "speed": 101
+    },
+    {
+        "character": "argenti",
+        "path": "destruction",
+        "element": "physical",
+        "image": "argenti",
+        "stars": "five",
+        "speed": 103
+    },
+    {
+        "character": "arlan",
+        "path": "destruction",
+        "element": "lightning",
+        "image": "arlan",
+        "stars": "four",
+        "speed": 102
+    },
+    {
+        "character": "asta",
+        "path": "harmony",
+        "element": "fire",
+        "image": "asta",
+        "stars": "four",
+        "speed": 106
+    },
+    {
+        "character": "aventurine",
+        "path": "preservation",
+        "element": "imaginary",
+        "image": "aventurine",
+        "stars": "five",
+        "speed": 106
+    },
+    {
+        "character": "bailu",
+        "path": "abundance",
+        "element": "lightning",
+        "image": "bailu",
+        "stars": "five",
+        "speed": 98
+    },
+    {
+        "character": "black swan",
+        "path": "nihility",
+        "element": "wind",
+        "image": "black swan",
+        "stars": "five",
+        "speed": 102
+    },
+    {
+        "character": "blade",
+        "path": "destruction",
+        "element": "wind",
+        "image": "blade",
+        "stars": "five",
+        "speed": 97
+    },
+    {
+        "character": "bronya",
+        "path": "abundance",
+        "element": "wind",
+        "image": "bronya",
+        "stars": "five",
+        "speed": 100
+    },
+    {
+        "character": "clara",
+        "path": "destruction",
+        "element": "physical",
+        "image": "clara",
+        "stars": "five",
+        "speed": 90
+    },
+    {
+        "character": "dan heng",
+        "path": "hunt",
+        "element": "wind",
+        "image": "dan heng",
+        "stars": "four",
+        "speed": 110
+    },
+    {
+        "character": "dan heng • imbibitor lunae",
+        "path": "destruction",
+        "element": "imaginary",
+        "image": "dan heng imbibitor lunae",
+        "stars": "five",
+        "speed": 102
+    },
+    {
+        "character": "dr. ratio",
+        "path": "hunt",
+        "element": "imaginary",
+        "image": "dr. ratio",
+        "stars": "five",
+        "speed": 106
+    },
+    {
+        "character": "fu xuan",
+        "path": "preservation",
+        "element": "quantum",
+        "image": "fu xuan",
+        "stars": "five",
+        "speed": 100
+    },
+    {
+        "character": "gallagher",
+        "path": "abundance",
+        "element": "fire",
+        "image": "gallagher",
+        "stars": "four",
+        "speed": 98
+    },
+    {
+        "character": "gepard",
+        "path": "preservation",
+        "element": "ice",
+        "image": "gepard",
+        "stars": "five",
+        "speed": 92
+    },
+    {
+        "character": "guinaifen",
+        "path": "nihility",
+        "element": "fire",
+        "image": "guinaifen",
+        "stars": "four",
+        "speed": 106
+    },
+    {
+        "character": "hanya",
+        "path": "harmony",
+        "element": "physical",
+        "image": "hanya",
+        "stars": "four",
+        "speed": 119
+    },
+    {
+        "character": "herta",
+        "path": "erudition",
+        "element": "ice",
+        "image": "herta",
+        "stars": "four",
+        "speed": 100
+    },
+    {
+        "character": "himeko",
+        "path": "erudition",
+        "element": "fire",
+        "image": "himeko",
+        "stars": "five",
+        "speed": 96
+    },
+    {
+        "character": "hook",
+        "path": "destruction",
+        "element": "fire",
+        "image": "hook",
+        "stars": "four",
+        "speed": 94
+    },
+    {
+        "character": "huohuo",
+        "path": "abundance",
+        "element": "wind",
+        "image": "huohuo",
+        "stars": "five",
+        "speed": 103
+    },
+    {
+        "character": "jing yuan",
+        "path": "erudition",
+        "element": "lightning",
+        "image": "jing yuan",
+        "stars": "five",
+        "speed": 99
+    },
+    {
+        "character": "jingliu",
+        "path": "destruction",
+        "element": "ice",
+        "image": "jingliu",
+        "stars": "five",
+        "speed": 105
+    },
+    {
+        "character": "kafka",
+        "path": "nihility",
+        "element": "lightning",
+        "image": "kafka",
+        "stars": "five",
+        "speed": 100
+    },
+    {
+        "character": "luka",
+        "path": "nihility",
+        "element": "physical",
+        "image": "luka",
+        "stars": "four",
+        "speed": 100
+    },
+    {
+        "character": "loucha",
+        "path": "abundance",
+        "element": "imaginary",
+        "image": "loucha",
+        "stars": "five",
+        "speed": 101
+    },
+    {
+        "character": "lynx",
+        "path": "abundance",
+        "element": "ice",
+        "image": "lynx",
+        "stars": "four",
+        "speed": 100
+    },
+    {
+        "character": "march 7th",
+        "path": "preservation",
+        "element": "ice",
+        "image": "march 7th",
+        "stars": "four",
+        "speed": 101
+    },
+    {
+        "character": "misha",
+        "path": "destruction",
+        "element": "ice",
+        "image": "misha",
+        "stars": "four",
+        "speed": 96
+    },
+    {
+        "character": "natasha",
+        "path": "abundance",
+        "element": "physical",
+        "image": "natasha",
+        "stars": "four",
+        "speed": 98
+    },
+    {
+        "character": "pela",
+        "path": "nihility",
+        "element": "ice",
+        "image": "pela",
+        "stars": "four",
+        "speed": 105
+    },
+    {
+        "character": "qingque",
+        "path": "erudition",
+        "element": "quantum",
+        "image": "qingque",
+        "stars": "four",
+        "speed": 98
+    },
+    {
+        "character": "ruan mei",
+        "path": "harmony",
+        "element": "ice",
+        "image": "ruan mei",
+        "stars": "five",
+        "speed": 109
+    },
+    {
+        "character": "sampo",
+        "path": "nihility",
+        "element": "wind",
+        "image": "sampo",
+        "stars": "four",
+        "speed": 102
+    },
+    {
+        "character": "seele",
+        "path": "hunt",
+        "element": "quantum",
+        "image": "seele",
+        "stars": "five",
+        "speed": 115
+    },
+    {
+        "character": "serval",
+        "path": "erudition",
+        "element": "lightning",
+        "image": "serval",
+        "stars": "four",
+        "speed": 104
+    },
+    {
+        "character": "silver wolf",
+        "path": "nihility",
+        "element": "quantum",
+        "image": "silver wolf",
+        "stars": "five",
+        "speed": 107
+    },
+    {
+        "character": "sparkle",
+        "path": "harmony",
+        "element": "quantum",
+        "image": "sparkle",
+        "stars": "five",
+        "speed": 101
+    },
+    {
+        "character": "sushang",
+        "path": "hunt",
+        "element": "physical",
+        "image": "sushang",
+        "stars": "four",
+        "speed": 100
+    },
+    {
+        "character": "tingyun",
+        "path": "harmony",
+        "element": "lightning",
+        "image": "tingyun",
+        "stars": "four",
+        "speed": 112
+    },
+    {
+        "character": "topaz & numby",
+        "path": "hunt",
+        "element": "fire",
+        "image": "topaz & numby",
+        "stars": "five",
+        "speed": 100
+    },
+    {
+        "character": "trailblazer (fire)",
+        "path": "preservation",
+        "element": "fire",
+        "image": "trailblazer (fire)",
+        "stars": "five",
+        "speed": 95
+    },
+    {
+        "character": "trailblazer (physical)",
+        "path": "destruction",
+        "element": "physical",
+        "image": "trailblazer (physical)",
+        "stars": "five",
+        "speed": 100
+    },
+    {
+        "character": "welt",
+        "path": "nihility",
+        "element": "imaginary",
+        "image": "welt",
+        "stars": "five",
+        "speed": 102
+    },
+    {
+        "character": "xueyi",
+        "path": "destruction",
+        "element": "quantum",
+        "image": "xueyi",
+        "stars": "four",
+        "speed": 103
+    },
+    {
+        "character": "yanqing",
+        "path": "hunt",
+        "element": "ice",
+        "image": "yanqing",
+        "stars": "five",
+        "speed": 109
+    },
+    {
+        "character": "yukong",
+        "path": "harmony",
+        "element": "imaginary",
+        "image": "yukong",
+        "stars": "four",
+        "speed": 107
+    }
+    
+]

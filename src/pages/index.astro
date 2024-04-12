@@ -49,6 +49,13 @@ import Card from "../components/Card.astro";
           <!-- Bonuses -->
           <div class="form-section">
             <h3>2. Add bonuses <span class="optional">(optional)</span></h3>
+            <div class="presets-container">
+              <p>Presets</p>
+              <div class="presets">
+                <button class="presets-buttons" data-cycles="5" data-input="cycles">MoC</button>
+                <button class="presets-buttons" data-cycles="3" data-input="cycles">PF</button>
+              </div>
+            </div>
             <div>
               <label for="flatSpeed">
                 <span class="svg-container">
@@ -101,8 +108,8 @@ import Card from "../components/Card.astro";
             <div class="presets-container">
               <p>Presets</p>
               <div class="presets">
-                <button class="cycles-preset" data-cycles="5" data-input="cycles">MoC</button>
-                <button class="cycles-preset" data-cycles="3" data-input="cycles">PF</button>
+                <button class="presets-buttons" data-cycles="5" data-input="cycles">MoC</button>
+                <button class="presets-buttons" data-cycles="3" data-input="cycles">PF</button>
               </div>
             </div>
             
@@ -227,7 +234,7 @@ import Card from "../components/Card.astro";
     color: hsl(var(--text) / .8);
   }
 
-  .cycles-preset {
+  .presets-buttons {
     padding: .25rem .5rem;
     color: hsl(var(--text) / .5);
     background-color: hsl(var(--dark-700));
@@ -239,16 +246,16 @@ import Card from "../components/Card.astro";
     user-select: none;
   }
 
-  .cycles-preset:is(:active) {
+  .presets-buttons:is(:active) {
     scale: .95;
   }
 
-  .cycles-preset:is(.pressed) {
+  .presets-buttons:is(.pressed) {
     color: hsl(var(--background));
     background-color: hsl(var(--important-700));
   }
 
-  .cycles-preset:is(.pressed):active {
+  .presets-buttons:is(.pressed):active {
     scale: 1;
   }
 
