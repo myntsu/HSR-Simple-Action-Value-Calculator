@@ -25,11 +25,11 @@ function validateInputValues() {
   
   function isModifierKey(event) {
     const key = event.key;
-    return key == 'Backspace' || key == 'Delete' || event.ctrlKey || event.metaKey;
+    return key == 'Backspace' || key == 'Delete' || key == 'Tab' || event.ctrlKey || event.metaKey;
   }
   
   function enforceMinMaxValue(min, max) {
-    return function(event) {
+    return function() {
       let value = parseInt(this.value);
       if (isNaN(value) || value < min) {
         this.value = min;

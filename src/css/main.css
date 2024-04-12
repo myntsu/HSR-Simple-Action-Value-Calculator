@@ -20,10 +20,6 @@ main {
     margin-block-end: 0.25em;
   }
 
-  hr {
-    border-color: hsl(var(--dark-700));
-  }
-
   .content {
     max-width: 600px;
     padding: 1rem;
@@ -34,6 +30,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
+    margin-block-end: 2rem;
   }
 
   form > :nth-child(n + 3):nth-child(-n + 3) {
@@ -152,6 +149,12 @@ main {
     scale: .95;
   }
 
+  .presets-buttons:is(:hover, :focus-visible) {
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-900));
+    transition: background-color 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
   .presets-buttons:is(.pressed) {
     color: hsl(var(--background));
     background-color: hsl(var(--important-300));
@@ -172,6 +175,8 @@ main {
     font-family: monospace;
     font-weight: 900;
     font-size: 1rem;
+
+    text-align: center;
   }
 
   .form-section input:is(:focus, :focus-visible) {
@@ -202,5 +207,6 @@ main {
     box-shadow: none;
   }
 
-
-  
+  #result {
+    background-color: hsl(var(--dark-900) / .7);
+  }
