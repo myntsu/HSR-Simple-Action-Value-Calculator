@@ -1,4 +1,4 @@
-let presetButtons = document.querySelectorAll('.presets');
+let presetButtons = document.querySelectorAll('.presets-buttons');
 
 presetButtons.forEach(presetButton => {
   presetButton.addEventListener('click', function(event) {
