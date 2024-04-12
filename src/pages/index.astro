@@ -15,23 +15,39 @@ import "../css/main.css";
         <hr />
 
         <form id="actionValueCalculator">
-
           <!-- Base speed -->
           <div class="form-section">
             <h3>1. Choose the base speed</h3>
             <div>
-              <label class="search-label" for="searchCharacter">
+              <label
+                class="search-label"
+                for="searchCharacter">
                 <span class="svg-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 10.23q-1.567 0-2.65-1.08q-1.08-1.083-1.08-2.65t1.08-2.65t2.65-1.08t2.65 1.081q1.08 1.082 1.08 2.649q0 .675-.209 1.237q-.21.561-.567 1.01l2.961 2.96q.14.141.15.345t-.15.363t-.353.16t-.354-.16l-2.962-2.961q-.448.396-1.038.586t-1.208.19m0-1q1.146 0 1.938-.792q.793-.792.793-1.938t-.793-1.938t-1.938-.793t-1.938.793q-.793.792-.793 1.938t.793 1.938t1.938.793M4.615 21q-.69 0-1.152-.462T3 19.385V6.615q0-.69.463-1.152T4.615 5h4.473q.349 0 .566.276t.17.624q-.018.177-.024.36t-.006.36q0 2.378 1.656 3.982t4.075 1.604q.437 0 .883-.063t.907-.193l1.168 1.09q.255.218.386.532t.131.657v5.156q0 .69-.462 1.152T17.385 21z"/></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="M15.5 10.23q-1.567 0-2.65-1.08q-1.08-1.083-1.08-2.65t1.08-2.65t2.65-1.08t2.65 1.081q1.08 1.082 1.08 2.649q0 .675-.209 1.237q-.21.561-.567 1.01l2.961 2.96q.14.141.15.345t-.15.363t-.353.16t-.354-.16l-2.962-2.961q-.448.396-1.038.586t-1.208.19m0-1q1.146 0 1.938-.792q.793-.792.793-1.938t-.793-1.938t-1.938-.793t-1.938.793q-.793.792-.793 1.938t.793 1.938t1.938.793M4.615 21q-.69 0-1.152-.462T3 19.385V6.615q0-.69.463-1.152T4.615 5h4.473q.349 0 .566.276t.17.624q-.018.177-.024.36t-.006.36q0 2.378 1.656 3.982t4.075 1.604q.437 0 .883-.063t.907-.193l1.168 1.09q.255.218.386.532t.131.657v5.156q0 .69-.462 1.152T17.385 21z"
+                    ></path></svg
+                  >
                 </span>
                 Search
               </label>
-              <input type="text" name="searchCharacter" id="searchCharacter" placeholder="Sparkle">
+              <input
+                type="text"
+                name="searchCharacter"
+                id="searchCharacter"
+                placeholder="Sparkle"
+              />
             </div>
             <div class="presets-container">
               <p></p>
-              <div id="characters-preset" class="presets">
-                
+              <div
+                id="characters-preset"
+                class="presets">
               </div>
             </div>
             <div>
@@ -70,9 +86,24 @@ import "../css/main.css";
             <div class="presets-container">
               <p>Presets</p>
               <div class="presets">
-                <button class="presets-buttons" data-cycles="6" data-input="percentSpeed">Hackerspeed</button>
-                <button class="presets-buttons" data-cycles="10" data-input="percentSpeed">Ruan Mei</button>
-                <button class="presets-buttons" data-cycles="12" data-input="percentSpeed">Huohuo (E1)</button>
+                <button
+                  class="presets-buttons"
+                  data-cycles="6"
+                  data-input="percentSpeed"
+                  >Hackerspeed</button
+                >
+                <button
+                  class="presets-buttons"
+                  data-cycles="10"
+                  data-input="percentSpeed"
+                  >Ruan Mei</button
+                >
+                <button
+                  class="presets-buttons"
+                  data-cycles="12"
+                  data-input="percentSpeed"
+                  >Huohuo (E1)</button
+                >
               </div>
             </div>
             <div>
@@ -127,11 +158,21 @@ import "../css/main.css";
             <div class="presets-container">
               <p>Presets</p>
               <div class="presets">
-                <button class="presets-buttons" data-cycles="5" data-input="cycles">MoC</button>
-                <button class="presets-buttons" data-cycles="3" data-input="cycles">PF</button>
+                <button
+                  class="presets-buttons"
+                  data-cycles="5"
+                  data-input="cycles"
+                  >Memory of Chaos</button
+                >
+                <button
+                  class="presets-buttons"
+                  data-cycles="3"
+                  data-input="cycles"
+                  >Pure Fiction</button
+                >
               </div>
             </div>
-            
+
             <div>
               <label for="cycles">
                 <span class="svg-container">
@@ -159,17 +200,22 @@ import "../css/main.css";
           </div>
 
           <!-- Submit -->
-          <input
-            type="button"
-            value="Calculate"
-            id="submit"
-          />
+          <div class="submit-wrapper">
+            <p></p>
+            <div class="submit-button">
+              <input
+                type="button"
+                value="calculate"
+                id="submit"
+              />
+            </div>
+          </div>
         </form>
 
         <p id="result"></p>
       </div>
     </section>
-    <Footer/>
+    <Footer />
   </main>
 </Layout>
 

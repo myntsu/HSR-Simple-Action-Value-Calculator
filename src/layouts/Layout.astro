@@ -52,6 +52,7 @@ const { title } = Astro.props;
     --dark-900: 0 0% 35%;
 
     --important: 49 85% 65%;
+    --secondary: 200 40% 60%;
 
     --important-100: 49 85% 65%;
     --important-300: 49 85% 71%;
@@ -86,9 +87,16 @@ const { title } = Astro.props;
     color: hsl(var(--background));
   }
 
+  @media (max-width: 570px) {
+    ::-webkit-scrollbar  {
+      display: none;
+    }
+  }
+
   html,
   body {
     height: 100%;
+    scrollbar-gutter: auto;
   }
 
   body {

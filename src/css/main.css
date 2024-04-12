@@ -99,6 +99,15 @@ main {
     .form-section > div {
       display: block;
     }
+
+    .submit-wrapper p {
+      display: none;
+    }
+
+    #submit {
+      margin-inline-end: 0 !important;
+      margin-inline: auto !important;
+    }
   }
 
   .form-section > div:has(input:is(:focus, :focus-visible)) label {
@@ -116,7 +125,6 @@ main {
     align-items: center;
     gap: 0.25rem;
     color: hsl(var(--dark-900));
-    margin-block-end: 0.25rem;
   }
 
   .form-section .presets {
@@ -134,8 +142,8 @@ main {
   }
 
   .presets-buttons {
-    padding: .25rem .5rem;
-    color: hsl(var(--text) / .5);
+    padding: .3rem .5rem;
+    color: hsl(var(--text) / .7);
     background-color: hsl(var(--dark-700));
     border: none;
     border-radius: .25rem;
@@ -171,12 +179,11 @@ main {
     padding-inline-start: 0.5rem;
     border: 0;
     border-radius: 0.25rem;
+    background-color: hsl(var(--text) / .9);
 
     font-family: monospace;
     font-weight: 900;
     font-size: 1rem;
-
-    text-align: center;
   }
 
   .form-section input:is(:focus, :focus-visible) {
@@ -188,9 +195,30 @@ main {
     transition: translate 150ms linear;
   }
 
+  .submit-wrapper {
+    width: 100%;
+
+    display: flex;
+    gap: .5rem;
+  }
+  
+  .submit-wrapper p {
+    width: 13ch;
+  }
+
+  .submit-button {
+    flex: 1 0 0;
+
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+
   #submit {
-    margin-inline: auto;
+    /* margin-inline: auto; */
+    margin-inline-end: .5rem;
     padding: 0.5rem 1rem;
+    color: hsl(var(--));
     background: hsl(var(--important));
     border: 0;
     border-radius: 0.25rem;
@@ -200,6 +228,7 @@ main {
     font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
+    font-family: monospace;
   }
 
   #submit:is(:active) {
