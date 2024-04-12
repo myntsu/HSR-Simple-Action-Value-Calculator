@@ -36,8 +36,8 @@ main {
     gap: 0.25rem;
   }
 
-  form > :last-child {
-    margin-block-start: 1rem;
+  form > :nth-child(n + 3):nth-child(-n + 3) {
+    margin-block-end: 1rem;
   }
 
   .form-section {
@@ -48,6 +48,60 @@ main {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  #characters-preset {
+    --image-size: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--image-size), 1fr));
+    place-items: start;
+    padding-block: .5rem;
+    height: calc(var(--image-size) * 2.5);
+    overflow-y: auto;
+    gap: .5rem
+  }
+
+  .character-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+  }
+
+  #characters-preset:is(:hover) .presets-buttons {
+    opacity: .5;
+  }
+
+  #characters-preset .presets-buttons:is(:hover) {
+    opacity: 1 !important;
+  }
+
+  #characters-preset .presets-buttons {
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  #characters-preset:has(.presets-buttons:is(.pressed)) .presets-buttons {
+    opacity: .5;
+  }
+
+  #characters-preset .presets-buttons:is(.pressed) {
+    opacity: 1 !important;
+  }
+
+  .presets-container:has(#characters-preset) p {
+    align-self: flex-start;
+  }
+
+  /* Media query */
+  @media (max-width: 570px) {
+    form > :nth-child(n + 1):not(:last-child) {
+      margin-block-end: 1rem;
+    }
+
+    .form-section > div {
+      display: block;
+    }
   }
 
   .form-section > div:has(input:is(:focus, :focus-visible)) label {
@@ -100,7 +154,7 @@ main {
 
   .presets-buttons:is(.pressed) {
     color: hsl(var(--background));
-    background-color: hsl(var(--important-700));
+    background-color: hsl(var(--important-300));
   }
 
   .presets-buttons:is(.pressed):active {
@@ -121,7 +175,7 @@ main {
   }
 
   .form-section input:is(:focus, :focus-visible) {
-    background-color: hsl(var(--important-700));
+    background-color: hsl(var(--important-900));
   }
 
   .form-section label:is(.focused) {
@@ -148,45 +202,5 @@ main {
     box-shadow: none;
   }
 
-  #characters-preset {
-    --image-size: 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--image-size), 1fr));
-    place-items: start;
-    padding-block: .5rem;
-    height: calc(var(--image-size) * 2.5);
-    overflow-y: auto;
-    gap: .5rem
-  }
-
-  .character-image {
-    display: block;
-    width: min(var(--image-size), 100%);
-    height: min(var(--image-size), 100%);
-    border-radius: .5rem;
-  }
-
-  #characters-preset:is(:hover) .presets-buttons {
-    opacity: .5;
-  }
-
-  #characters-preset .presets-buttons:is(:hover) {
-    opacity: 1 !important;
-  }
-
-  #characters-preset .presets-buttons {
-    padding: 0;
-    background-color: transparent;
-  }
-  
-  #characters-preset:has(.presets-buttons:is(.pressed)) .presets-buttons {
-    opacity: .5;
-  }
-  #characters-preset .presets-buttons:is(.pressed) {
-    opacity: 1 !important;
-  }
-  .presets-container:has(#characters-preset) p {
-    align-self: flex-start;
-  }
 
   
