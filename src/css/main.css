@@ -39,12 +39,15 @@ main {
 
   .form-section {
     flex: 1 0 100%;
+
+    display: grid;
+    gap: .25rem;
   }
 
   .form-section > div {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: .5rem;
   }
 
   #characters-preset {
@@ -88,26 +91,6 @@ main {
 
   .presets-container:has(#characters-preset) p {
     align-self: flex-start;
-  }
-
-  /* Media query */
-  @media (max-width: 570px) {
-    form > :nth-child(n + 1):not(:last-child) {
-      margin-block-end: 1rem;
-    }
-
-    .form-section > div {
-      display: block;
-    }
-
-    .submit-wrapper p {
-      display: none;
-    }
-
-    #submit {
-      margin-inline-end: 0 !important;
-      margin-inline: auto !important;
-    }
   }
 
   .form-section > div:has(input:is(:focus, :focus-visible)) label {
@@ -237,5 +220,33 @@ main {
   }
 
   #result {
+    padding: 1rem;
     background-color: hsl(var(--dark-900) / .7);
+    border-radius: .5rem;
+  }
+
+  
+  /* Media query */
+  @media (max-width: 570px) {
+    form > :nth-child(n + 1):not(:last-child) {
+      margin-block-end: 1rem;
+    }
+
+    .form-section .presets-container:has(#characters-preset) {
+      display: block;
+    }
+
+    .presets .presets-buttons {
+      flex: 1;
+      text-wrap: nowrap;
+    }
+
+    .submit-wrapper p {
+      display: none;
+    }
+
+    #submit {
+      margin-inline-end: 0 !important;
+      margin-inline: auto !important;
+    }
   }

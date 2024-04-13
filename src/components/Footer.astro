@@ -1,11 +1,32 @@
 <footer>
     <hr>
-    Made by <a href="">Myndi</a>
+    <div class="footer-wrapper">
+        <span class="svg-container">
+        </span>
+        Made by <a href="https://discord.com/users/124421052569878528/" target="_blank">Myndi</a>
+    </div>
 </footer>
 
 <style>
     footer {
         max-width: 600px;
         margin-inline: auto;
+        color: hsl(var(--text) / .8);
+    }
+
+    .footer-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: .25rem;
+    }
+
+    a {
+        color: hsl(var(--important-700));
+    }
+
+    a:is(:hover, :focus-visible) {
+        color: hsl(var(--dark-900));
+        text-decoration: none;
+        transition: color 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 </style>
