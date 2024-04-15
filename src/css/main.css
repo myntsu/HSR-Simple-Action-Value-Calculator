@@ -184,10 +184,6 @@ main {
     display: flex;
     gap: .5rem;
   }
-  
-  .submit-wrapper p {
-    width: 13ch;
-  }
 
   .submit-button {
     flex: 1 0 0;
@@ -198,8 +194,7 @@ main {
   }
 
   #submit {
-    /* margin-inline: auto; */
-    margin-inline-end: .5rem;
+    margin-inline: auto;
     padding: 0.5rem 1rem;
     color: hsl(var(--));
     background: hsl(var(--important));
