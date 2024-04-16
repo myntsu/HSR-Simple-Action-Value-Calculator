@@ -44,7 +44,7 @@ import "../css/main.css";
               />
             </div>
             <div class="presets-container">
-              <p></p>
+              <p aria-label="Presets"></p>
               <div
                 id="characters-preset"
                 class="presets">
@@ -84,7 +84,7 @@ import "../css/main.css";
           <div class="form-section">
             <h3>2. Add bonuses <span class="optional">(optional)</span></h3>
             <div class="presets-container">
-              <p>Presets</p>
+              <p aria-label="Presets"></p>
               <div class="presets">
                 <button
                   class="presets-buttons"
@@ -122,11 +122,13 @@ import "../css/main.css";
                 </span>
                 Flat bonus
               </label>
-              <input
-                type="number"
-                id="flatSpeed"
-                value="0"
-              />
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="flatSpeed"
+                  value="0"
+                />
+              </div>
             </div>
             <div>
               <label for="percentSpeed">
@@ -144,11 +146,14 @@ import "../css/main.css";
                 </span>
                 Percent bonus
               </label>
-              <input
-                type="number"
-                id="percentSpeed"
-                value="0"
-              />
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="percentSpeed"
+                  value="0"
+                />
+                <div class="icon">%</div>
+              </div>
             </div>
           </div>
 
@@ -189,13 +194,18 @@ import "../css/main.css";
                 </span>
                 Total cycles
               </label>
-              <input
-                type="number"
-                id="cycles"
-                value="0"
-                min="0"
-                max="8"
-              />
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="cycles"
+                  value="0"
+                  min="0"
+                  max="8"
+                />
+                <div class="icon">
+                  cycles
+                </div>
+              </div>
             </div>
           </div>
 

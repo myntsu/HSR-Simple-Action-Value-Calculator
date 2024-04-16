@@ -103,10 +103,10 @@ main {
   }
 
   .form-section :is(label) {
-    flex: 1 0 13ch;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    min-width: 13ch;
     color: hsl(var(--dark-900));
   }
 
@@ -155,6 +155,13 @@ main {
     scale: 1;
   }
 
+  .form-section .input-wrapper {
+    flex: 1 0 0;
+
+    display: flex;
+    gap: .25rem;
+  }
+
   .form-section :is(input) {
     width: 100%;
     height: 3ch;
@@ -167,6 +174,18 @@ main {
     font-family: monospace;
     font-weight: 900;
     font-size: 1rem;
+  }
+
+  .form-section .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .5rem;
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-700));
+    border-radius: .25rem;
+    font-weight: 900;
+    user-select: none;
   }
 
   .form-section input:is(:focus, :focus-visible) {
@@ -229,6 +248,10 @@ main {
 
     .form-section .presets-container:has(#characters-preset) {
       display: block;
+    }
+
+    .presets-container p {
+      display: none;
     }
 
     .presets .presets-buttons {
