@@ -36,10 +36,16 @@ document.getElementById('submit').addEventListener('click', () => {
     let totalActionsCycle = baseActions + bonusActions;
     totalActions += totalActionsCycle;
 
+    // Calculate the background color based on the cycle number
+    let startColor = 85;
+    let endColor = 70;
+    let colorStep = (endColor - startColor) / (totalCycles - 1);
+    let cycleColor = startColor + colorStep * i;
+
     // Create a new div for the cycle
     let cycleDiv = document.createElement('div');
     cycleDiv.classList = 'result-data';
-    cycleDiv.innerHTML = `<span>Cycle ${i}</span> ${totalActionsCycle} action(s) [${baseActions} normal + ${bonusActions} bonus]`;
+    cycleDiv.innerHTML = `<span class="title-value" style="background-color: hsl(49, 85%, ${cycleColor}%)">Cycle ${i}</span> ${totalActionsCycle} action(s) [${baseActions} normal + ${bonusActions} bonus]`;
 
     // Append the div to the container
     cyclesContainer.appendChild(cycleDiv);

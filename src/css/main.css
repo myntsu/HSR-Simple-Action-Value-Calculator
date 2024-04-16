@@ -4,11 +4,6 @@ main {
     background-color: hsl(var(--background) / .95);
   }
 
-  section {
-    display: grid;
-    place-items: center;
-  }
-
   h1,
   h2 {
     color: hsl(var(--important));
@@ -22,6 +17,7 @@ main {
 
   .content {
     max-width: 600px;
+    margin-inline: auto;
     padding: 1rem;
     z-index: 0;
   }
@@ -215,7 +211,6 @@ main {
   #submit {
     margin-inline: auto;
     padding: 0.5rem 1rem;
-    color: hsl(var(--));
     background: hsl(var(--important));
     border: 0;
     border-radius: 0.25rem;
@@ -235,10 +230,9 @@ main {
 
   #result {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 100%;
-    gap: .25rem;
     padding: 1rem;
+    color: hsl(var(--text) / .9);
     /* background-color: hsl(var(--dark-900) / .5); */
     border-radius: .5rem;
   }
@@ -249,15 +243,20 @@ main {
     margin-inline: auto;
   }
 
-  #result :is(.result-data, #cycles-container) {
+  #result hr {
+    margin-block-end: .5rem;
+  }
+
+  #result :is(.result-data) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: .5rem;
     width: 100%;
+    margin-block-end: .25rem;
   }
 
-  #result span {
+  #result span:is(.title-value) {
     min-width: 11ch;
     color: hsl(var(--background));
     background-color: hsl(var(--important-700));
