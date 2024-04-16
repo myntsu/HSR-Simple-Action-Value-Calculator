@@ -1,19 +1,16 @@
 document.getElementById('submit').addEventListener('click', () => {
-  // Extracting input value
   const baseSpeed = Number(document.getElementById('character').value);
   const flatSpeed = Number(document.getElementById('flatSpeed').value);
   const percentSpeed = Number(document.getElementById('percentSpeed').value) / 100;
   const totalCycles = Number(document.getElementById('cycles').value);
 
-  // Calculating speed/action value
   let totalSpeed = baseSpeed * (1 + percentSpeed) + flatSpeed;
   let actionValue = 10000 / totalSpeed;
 
-  // Calculating AV per cycle
   let remainder = 0;
   let totalActions = 0;
   let cyclesContainer = document.getElementById('cycles-container');
-  cyclesContainer.innerHTML = ''; // Clear the container
+  cyclesContainer.innerHTML = '';
 
   for (let i = 0; i <= totalCycles; i++) {
     let cycleValue = (i === 0) ? 150 : 100;
@@ -27,7 +24,6 @@ document.getElementById('submit').addEventListener('click', () => {
       remainder -= bonusActions;
     }
 
-    // If there is more than 1 action, consider it bonus
     if (baseActions >= 2) {
       bonusActions += baseActions - 1;
       baseActions = 1;
@@ -36,22 +32,18 @@ document.getElementById('submit').addEventListener('click', () => {
     let totalActionsCycle = baseActions + bonusActions;
     totalActions += totalActionsCycle;
 
-    // Calculate the background color based on the cycle number
     let startColor = 85;
     let endColor = 70;
     let colorStep = (endColor - startColor) / (totalCycles - 1);
     let cycleColor = startColor + colorStep * i;
 
-    // Create a new div for the cycle
     let cycleDiv = document.createElement('div');
     cycleDiv.classList = 'result-data';
     cycleDiv.innerHTML = `<span class="title-value" style="background-color: hsl(49, 85%, ${cycleColor}%)">Cycle ${i}</span> ${totalActionsCycle} action(s) [${baseActions} normal + ${bonusActions} bonus]`;
 
-    // Append the div to the container
     cyclesContainer.appendChild(cycleDiv);
   }
 
-  // Display the total speed, action value, and total actions
   document.getElementById('total-speed').innerHTML = `<span>Total speed</span> ${totalSpeed}`;
   document.getElementById('action-value').innerHTML = `<span>Action value</span> ${actionValue}`;
   document.getElementById('total-actions').innerHTML = `<span>Total actions</span> ${totalActions}`;
