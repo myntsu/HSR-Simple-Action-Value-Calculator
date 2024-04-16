@@ -266,6 +266,14 @@ main {
     font-weight: 900;
   }
 
+  #result .bonus-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .15rem;
+    background-color: hsl(var(--secondary));
+    font-weight: 900;
+  }
   
   /* Media query */
   @media (max-width: 570px) {

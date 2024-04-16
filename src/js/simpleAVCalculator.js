@@ -37,14 +37,18 @@ document.getElementById('submit').addEventListener('click', () => {
     let colorStep = (endColor - startColor) / (totalCycles - 1);
     let cycleColor = startColor + colorStep * i;
 
+    let actionWord = (totalActionsCycle === 1) ? 'action' : 'actions';
+
     let cycleDiv = document.createElement('div');
     cycleDiv.classList = 'result-data';
-    cycleDiv.innerHTML = `<span class="title-value" style="background-color: hsl(49, 85%, ${cycleColor}%)">Cycle ${i}</span> ${totalActionsCycle} action(s) [${baseActions} normal + ${bonusActions} bonus]`;
+    cycleDiv.innerHTML = `<span class="title-value" style="background-color: hsl(49, 85%, ${cycleColor}%)">Cycle ${i}</span> ${totalActionsCycle} ${actionWord}`;
+
+    // [${baseActions} normal + ${bonusActions} bonus]
 
     cyclesContainer.appendChild(cycleDiv);
   }
 
-  document.getElementById('total-speed').innerHTML = `<span>Total speed</span> ${totalSpeed}`;
-  document.getElementById('action-value').innerHTML = `<span>Action value</span> ${actionValue}`;
+  document.getElementById('total-speed').innerHTML = `<span>Total speed</span> ${totalSpeed.toFixed(2)}`;
+  document.getElementById('action-value').innerHTML = `<span>Action value</span> ${actionValue.toFixed(2)}`;
   document.getElementById('total-actions').innerHTML = `<span>Total actions</span> ${totalActions}`;
 });
