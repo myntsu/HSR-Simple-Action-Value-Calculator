@@ -180,7 +180,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 .5rem;
+    padding: 0rem .75rem;
     color: hsl(var(--background));
     background-color: hsl(var(--important-700));
     border-radius: .25rem;
@@ -234,9 +234,37 @@ main {
   }
 
   #result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    gap: .25rem;
     padding: 1rem;
-    background-color: hsl(var(--dark-900) / .5);
+    /* background-color: hsl(var(--dark-900) / .5); */
     border-radius: .5rem;
+  }
+
+  #result > * {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  #result :is(.result-data, #cycles-container) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+  }
+
+  #result span {
+    min-width: 11ch;
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-700));
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    text-align: center;
+    font-weight: 900;
   }
 
   

@@ -73,7 +73,7 @@ import "../css/main.css";
               <input
                 type="number"
                 id="character"
-                value="0"
+                value="100"
                 min="0"
                 max="200"
               />
@@ -202,9 +202,6 @@ import "../css/main.css";
                   min="0"
                   max="8"
                 />
-                <div class="icon">
-                  cycles
-                </div>
               </div>
             </div>
           </div>
@@ -221,7 +218,17 @@ import "../css/main.css";
           </div>
         </form>
 
-        <div id="result"></div>
+        <div id="result">
+          <div class="result-data" id="total-speed"><span>Total speed</span> 0</div>
+          <div class="result-data" id="action-value"><span>Action value</span> 0</div>
+          <div class="result-data" id="total-actions"><span>Total actions</span> 0</div>
+          <hr>
+          <div>
+            <div id="cycles-container">
+
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <Footer />
