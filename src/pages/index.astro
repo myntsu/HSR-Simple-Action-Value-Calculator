@@ -88,6 +88,12 @@ import "../css/main.css";
               <div class="presets">
                 <button
                   class="presets-buttons"
+                  data-cycles="25"
+                  data-input="flatSpeed"
+                  >Boots</button
+                >
+                <button
+                  class="presets-buttons"
                   data-cycles="6"
                   data-input="percentSpeed"
                   >Hackerspace</button
@@ -103,6 +109,12 @@ import "../css/main.css";
                   data-cycles="12"
                   data-input="percentSpeed"
                   >Huohuo (E1)</button
+                >
+                <button
+                  class="presets-buttons"
+                  data-cycles="20"
+                  data-input="percentSpeed"
+                  >Himeko (E1)</button
                 >
               </div>
             </div>
@@ -219,10 +231,22 @@ import "../css/main.css";
         </form>
 
         <div id="result">
-          <div class="result-data" id="total-speed"><span>Total speed</span> 0</div>
-          <div class="result-data" id="action-value"><span>Action value</span> 0</div>
-          <div class="result-data" id="total-actions"><span>Total actions</span> 0</div>
-          <hr>
+          <div
+            class="result-data"
+            id="total-speed">
+            <span>Total speed</span> 0
+          </div>
+          <div
+            class="result-data"
+            id="action-value">
+            <span>Action value</span> 0
+          </div>
+          <div
+            class="result-data"
+            id="total-actions">
+            <span>Total actions</span> 0
+          </div>
+          <hr />
           <div>
             <div id="cycles-container">
               <div class="result-data">
@@ -244,5 +268,3 @@ import "../css/main.css";
   import "../js/cyclesBonusPresets.js";
   import "../js/preventHighNumber.js";
 </script>
-
-
