@@ -106,11 +106,15 @@ main {
     color: hsl(var(--dark-900));
   }
 
-  .form-section .presets {
+  .form-section :is(.presets, .presets > div){
     flex: 1 0 0;
     display: flex;
     flex-wrap: wrap;
     gap: .25rem;
+  }
+
+  .form-section .presets.speed-presets {
+    flex-direction: column;
   }
 
   .presets-container p {
