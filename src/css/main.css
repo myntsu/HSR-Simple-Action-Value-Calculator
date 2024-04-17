@@ -4,10 +4,13 @@ main {
     background-color: hsl(var(--background) / .95);
   }
 
-  h1,
-  h2 {
+  h1 {
     color: hsl(var(--important));
     text-align: center;
+  }
+
+  h2 {
+    margin-block: .25em;
   }
 
   h3 {
