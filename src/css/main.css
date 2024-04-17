@@ -109,7 +109,6 @@ main {
   .form-section :is(.presets, .presets > div){
     flex: 1 0 0;
     display: flex;
-    flex-wrap: wrap;
     gap: .25rem;
   }
 
@@ -125,6 +124,7 @@ main {
   }
 
   .presets-buttons {
+    flex: 1;
     padding: .3rem .5rem;
     color: hsl(var(--text) / .7);
     background-color: hsl(var(--dark-700));
@@ -291,6 +291,10 @@ main {
 
     .presets-container p {
       display: none;
+    }
+
+    .presets, .presets > div {
+      flex-wrap: wrap;
     }
 
     .presets .presets-buttons {
