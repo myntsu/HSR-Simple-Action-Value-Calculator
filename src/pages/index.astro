@@ -14,13 +14,13 @@ import "../css/main.css";
 
         <hr />
 
+        <button id="simple-mode" class="simple-mode">Simple mode</button>
         <form id="actionValueCalculator">
-          <button>Simple mode</button>
-
+          
           <!-- Base speed -->
           <div class="form-section">
             <h2>1. Choose the base speed</h2>
-            <div>
+            <div data-simple-mode>
               <label
                 class="search-label"
                 for="searchCharacter">
@@ -45,7 +45,7 @@ import "../css/main.css";
                 placeholder="Sparkle"
               />
             </div>
-            <div class="presets-container">
+            <div class="presets-container" data-simple-mode>
               <p aria-label="Presets"></p>
               <div
                 id="characters-preset"
@@ -83,7 +83,7 @@ import "../css/main.css";
           </div>
 
           <!-- Bonuses -->
-          <div class="form-section">
+          <div class="form-section" data-simple-mode>
             <h2>2. Add bonuses <span class="optional">(optional)</span></h2>
             <div class="presets-container">
               <p aria-label="Presets"></p>
@@ -273,4 +273,6 @@ import "../css/main.css";
   import "../js/baseSpeedPresets.js";
   import "../js/cyclesBonusPresets.js";
   import "../js/preventHighNumber.js";
+  import "../js/simpleMode.js";
 </script>
+
