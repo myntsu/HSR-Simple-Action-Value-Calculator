@@ -2,6 +2,7 @@ const simpleModeButton = document.getElementById('simple-mode');
 const simpleModeElements = document.querySelectorAll('[data-simple-mode]');
 const speedInputLabel = document.querySelector('.speed-input label');
 const speedInputSVG = document.querySelector('.speed-input .svg-container');
+const form = document.querySelector('form');
 
 let simpleModeState = localStorage.getItem('simpleModeState') === 'true';
 
@@ -11,6 +12,7 @@ simpleModeButton.addEventListener('click', () => {
   simpleModeState = !simpleModeState;
   localStorage.setItem('simpleModeState', simpleModeState);
   toggleSimpleMode(simpleModeState);
+  form.reset();
 });
 
 function toggleSimpleMode(isActive) {
