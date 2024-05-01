@@ -34,23 +34,51 @@ main {
 
   .simple-mode-wrapper span {
     font-size: .9rem;
+    text-transform: uppercase;
+    font-family: monospace;
   }
 
   #simple-mode {
-    padding: .5rem;
-    border: none;
-    border-radius: .25rem;
+    padding: .75rem 1.5rem;
+    background-color: hsl(var(--text) / .7);
+    border: 2px solid hsl(var(--text));
+    border-radius: 99999px;
+
+    font-size: .9rem;
+    font-weight: 900;
+    text-transform: uppercase;
     cursor: pointer;
 
     position: relative;
   }
 
+  #simple-mode:is(:active, .simple-mode) {
+    background-color: hsl(var(--secondary));
+  }
+
   #simple-mode::after {
     content: '';
     position: absolute;
+    transform: translate(-50%, -50%);
+    translate: 50% 47.5%;
+    width: 1.3rem;
+    aspect-ratio: 1;
     inset: 2px;
-    background-color: hsl(var(--important));
+    background-color: hsl(var(--dark-300));
     border-radius: inherit;
+
+    transition: translate 200ms ease-in-out;
+  }
+
+  #simple-mode:is(:active, .simple-mode)::after {
+    box-shadow: none;
+    translate: 160% 47.5%;
+    background-color: hsl(var(--text));
+  }
+
+  #simple-mode:is(:hover, :focus-visible):not(.simple-mode) {
+    outline: 2px solid hsl(var(--text) / .5);
+    outline-offset: 2px;
   }
 
   .content form {
