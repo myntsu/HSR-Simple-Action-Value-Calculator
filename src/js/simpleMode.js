@@ -8,7 +8,7 @@ let simpleModeState = localStorage.getItem('simpleModeState') === 'true';
 
 toggleSimpleMode(simpleModeState);
 
-simpleModeButton.addEventListener('click', () => {
+simpleModeButton.addEventListener('click', () => {  
   simpleModeState = !simpleModeState;
   localStorage.setItem('simpleModeState', simpleModeState);
   toggleSimpleMode(simpleModeState);
@@ -19,6 +19,12 @@ function toggleSimpleMode(isActive) {
   simpleModeElements.forEach(element => {
     element.style.display = isActive ? 'none' : '';
   });
+
+  if (isActive) {
+    simpleModeButton.classList.add('simple-mode');
+  } else {
+    simpleModeButton.classList.remove('simple-mode');
+  }
 
   speedInputLabel.textContent = isActive ? 'Total speed' : 'Base speed';
   speedInputLabel.prepend(speedInputSVG);

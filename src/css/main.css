@@ -25,6 +25,34 @@ main {
     z-index: 0;
   }
 
+  .simple-mode-wrapper {
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .simple-mode-wrapper span {
+    font-size: .9rem;
+  }
+
+  #simple-mode {
+    padding: .5rem;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+
+    position: relative;
+  }
+
+  #simple-mode::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: hsl(var(--important));
+    border-radius: inherit;
+  }
+
   .content form {
     display: flex;
     flex-wrap: wrap;
