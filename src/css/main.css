@@ -33,6 +33,7 @@ main {
   }
 
   .simple-mode-wrapper span {
+    color: hsl(var(--text) / .5);
     font-size: .9rem;
     text-transform: uppercase;
     font-family: monospace;
