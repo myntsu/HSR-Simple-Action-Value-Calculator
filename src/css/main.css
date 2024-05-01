@@ -64,7 +64,7 @@ main {
     width: 1.3rem;
     aspect-ratio: 1;
     inset: 2px;
-    background-color: hsl(var(--dark-300));
+    background-color: hsl(var(--text));
     border-radius: inherit;
 
     transition: translate 200ms ease-in-out;

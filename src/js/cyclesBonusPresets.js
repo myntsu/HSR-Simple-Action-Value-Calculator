@@ -1,5 +1,6 @@
 export function handlePresetButtons() {
   let presetButtons = document.querySelectorAll('.presets-buttons');
+  let resetButton = document.querySelector('#simple-mode');
 
   presetButtons.forEach(presetButton => {
     presetButton.setAttribute('aria-pressed', 'false');
@@ -51,6 +52,30 @@ export function handlePresetButtons() {
       if (input) {
         input.focus();
       }
+    });
+  });
+
+  resetButton.addEventListener('click', function() {
+    // When the reset button is clicked, deselect any selected buttons
+    presetButtons.forEach(button => {
+      if (button.classList.contains('pressed')) {
+        button.classList.remove('pressed');
+        button.setAttribute('aria-pressed', 'false');
+      }
+    });
+  });
+
+  let inputs = document.querySelectorAll('input');
+  inputs.forEach(input => {
+    input.addEventListener('input', function() {
+      // When the user types into the input field, deselect any selected buttons
+      let sameGroupButtons = document.querySelectorAll(`.presets-buttons[data-input='${this.id}']`);
+      sameGroupButtons.forEach(button => {
+        if (button.classList.contains('pressed')) {
+          button.classList.remove('pressed');
+          button.setAttribute('aria-pressed', 'false');
+        }
+      });
     });
   });
 }
