@@ -56,7 +56,6 @@ export function handlePresetButtons() {
   });
 
   resetButton.addEventListener('click', function() {
-    // When the reset button is clicked, deselect any selected buttons
     presetButtons.forEach(button => {
       if (button.classList.contains('pressed')) {
         button.classList.remove('pressed');
@@ -68,7 +67,6 @@ export function handlePresetButtons() {
   let inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
     input.addEventListener('input', function() {
-      // When the user types into the input field, deselect any selected buttons
       let sameGroupButtons = document.querySelectorAll(`.presets-buttons[data-input='${this.id}']`);
       sameGroupButtons.forEach(button => {
         if (button.classList.contains('pressed')) {

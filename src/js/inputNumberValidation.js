@@ -17,7 +17,7 @@ function validateInputValues() {
   characterInput.addEventListener('change', enforceMinMaxValue(50, 200));
   flatSpeedInput.addEventListener('change', enforceMinMaxValue(0, 1000));
   percentSpeedInput.addEventListener('change', enforceMinMaxValue(0, 100));
-  subStatsInput.addEventListener('change', enforceMinMaxValue(0, 100));
+  subStatsInput.addEventListener('change', enforceMinMaxValue(0, 1000));
   advanceForwardInput.addEventListener('change', enforceMinMaxValue(0, 100));
   cyclesInput.addEventListener('change', enforceMinMaxValue(0, 100));
 }
