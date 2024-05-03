@@ -2,35 +2,46 @@ document.getElementById('submit').addEventListener('click', () => {
   const baseSpeed = Number(document.getElementById('character').value);
   const flatSpeed = Number(document.getElementById('flatSpeed').value);
   const percentSpeed = Number(document.getElementById('percentSpeed').value) / 100;
+  const advanceForward = Number(document.getElementById('advanceForward').value) / 100; // New input field
   const totalCycles = Number(document.getElementById('cycles').value);
 
   let totalSpeed = baseSpeed * (1 + percentSpeed) + flatSpeed;
   let actionValue = 10000 / totalSpeed;
 
-  let remainder = 0;
-  let totalActions = 0;
   let cyclesContainer = document.getElementById('cycles-container');
   cyclesContainer.innerHTML = '';
 
+  let remainder = 0;
+  let totalActions = 0;
+
   for (let i = 0; i <= totalCycles; i++) {
     let cycleValue = (i === 0) ? 150 : 100;
-    let rawActions = cycleValue / actionValue;
-    let baseActions = Math.floor(rawActions);
-    remainder += rawActions - baseActions;
+    let currentActionValue = actionValue;
+    let totalActionsCycle = 0; // Define totalActionsCycle here
 
-    let bonusActions = 0;
-    if (remainder >= 1) {
-      bonusActions = Math.floor(remainder);
-      remainder -= bonusActions;
+    // Apply Advance Forward on the first turn
+    if (i === 0 && advanceForward > 0) {
+      let adjustedAV = actionValue * (1 - advanceForward);
+      let adjustedCycleValue = cycleValue - adjustedAV;
+      let rawActions = adjustedCycleValue / actionValue;
+      let baseActions = Math.floor(rawActions);
+      remainder += rawActions - baseActions;
+      totalActionsCycle = baseActions + 1; // Add 1 for the advanced action
+      totalActions += totalActionsCycle; // Update totalActions here
+    } else {
+      let rawActions = cycleValue / currentActionValue;
+      let baseActions = Math.floor(rawActions);
+      remainder += rawActions - baseActions;
+
+      let bonusActions = 0;
+      if (remainder >= 1) {
+        bonusActions = Math.floor(remainder);
+        remainder -= bonusActions;
+      }
+
+      totalActionsCycle = baseActions + bonusActions;
+      totalActions += totalActionsCycle;
     }
-
-    if (baseActions >= 2) {
-      bonusActions += baseActions - 1;
-      baseActions = 1;
-    }
-
-    let totalActionsCycle = baseActions + bonusActions;
-    totalActions += totalActionsCycle;
 
     let startColor = 85;
     let endColor = 70;
@@ -42,8 +53,6 @@ document.getElementById('submit').addEventListener('click', () => {
     let cycleDiv = document.createElement('div');
     cycleDiv.classList = 'result-data';
     cycleDiv.innerHTML = `<span class="title-value" style="background-color: hsl(49, 85%, ${cycleColor}%)">Cycle ${i}</span> ${totalActionsCycle} ${actionWord}`;
-
-    // [${baseActions} normal + ${bonusActions} bonus]
 
     cyclesContainer.appendChild(cycleDiv);
   }
