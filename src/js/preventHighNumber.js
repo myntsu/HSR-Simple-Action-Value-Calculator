@@ -2,10 +2,11 @@ function validateInputValues() {
   let characterInput = document.querySelector('#character');
   let flatSpeedInput = document.querySelector('#flatSpeed');
   let percentSpeedInput = document.querySelector('#percentSpeed');
+  let subStatsInput = document.querySelector('#substats');
   let advanceForwardInput = document.querySelector('#advanceForward');
   let cyclesInput = document.querySelector('#cycles');
 
-  [characterInput, flatSpeedInput, percentSpeedInput, advanceForwardInput, cyclesInput].forEach(input => {
+  [characterInput, flatSpeedInput, percentSpeedInput, subStatsInput, advanceForwardInput, cyclesInput].forEach(input => {
     input.addEventListener('keydown', function(e) {
       if (!isNumericInput(e) && !isModifierKey(e)) {
         e.preventDefault();
@@ -16,6 +17,7 @@ function validateInputValues() {
   characterInput.addEventListener('change', enforceMinMaxValue(50, 200));
   flatSpeedInput.addEventListener('change', enforceMinMaxValue(0, 1000));
   percentSpeedInput.addEventListener('change', enforceMinMaxValue(0, 100));
+  subStatsInput.addEventListener('change', enforceMinMaxValue(0, 100));
   advanceForwardInput.addEventListener('change', enforceMinMaxValue(0, 100));
   cyclesInput.addEventListener('change', enforceMinMaxValue(0, 100));
 }
