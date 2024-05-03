@@ -2,7 +2,7 @@ document.getElementById('submit').addEventListener('click', () => {
   const baseSpeed = Number(document.getElementById('character').value);
   const flatSpeed = Number(document.getElementById('flatSpeed').value);
   const percentSpeed = Number(document.getElementById('percentSpeed').value) / 100;
-  const advanceForward = Number(document.getElementById('advanceForward').value) / 100; // New input field
+  const advanceForward = Number(document.getElementById('advanceForward').value) / 100;
   const totalCycles = Number(document.getElementById('cycles').value);
 
   let totalSpeed = baseSpeed * (1 + percentSpeed) + flatSpeed;
@@ -17,17 +17,16 @@ document.getElementById('submit').addEventListener('click', () => {
   for (let i = 0; i <= totalCycles; i++) {
     let cycleValue = (i === 0) ? 150 : 100;
     let currentActionValue = actionValue;
-    let totalActionsCycle = 0; // Define totalActionsCycle here
+    let totalActionsCycle = 0;
 
-    // Apply Advance Forward on the first turn
     if (i === 0 && advanceForward > 0) {
       let adjustedAV = actionValue * (1 - advanceForward);
       let adjustedCycleValue = cycleValue - adjustedAV;
       let rawActions = adjustedCycleValue / actionValue;
       let baseActions = Math.floor(rawActions);
       remainder += rawActions - baseActions;
-      totalActionsCycle = baseActions + 1; // Add 1 for the advanced action
-      totalActions += totalActionsCycle; // Update totalActions here
+      totalActionsCycle = baseActions + 1;
+      totalActions += totalActionsCycle;
     } else {
       let rawActions = cycleValue / currentActionValue;
       let baseActions = Math.floor(rawActions);
