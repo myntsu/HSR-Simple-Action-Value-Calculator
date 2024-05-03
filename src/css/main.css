@@ -148,7 +148,7 @@ main {
     align-self: flex-start;
   }
 
-  .form-section > div:has(input:is(:focus, :focus-visible)) label {
+  .form-section > div:has(input:is(:focus, :focus-visible)) :is(label, .icon) {
     color: hsl(var(--important));
     transition: color 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -238,9 +238,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0rem .75rem;
-    color: hsl(var(--background));
-    background-color: hsl(var(--important-700));
+    width: 3ch;
+    color: hsl(var(--text) / .7);
     border-radius: .25rem;
     font-weight: 900;
     user-select: none;
