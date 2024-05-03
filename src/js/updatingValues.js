@@ -1,7 +1,7 @@
 let inputs = document.querySelectorAll('input');
 
 inputs.forEach(input => {
-  input.addEventListener('input', calculateTotalSpeed);
+  input.addEventListener('change', calculateTotalSpeed);
 });
 
 function calculateTotalSpeed() {
