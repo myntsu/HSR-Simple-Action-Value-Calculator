@@ -64,6 +64,14 @@
         "speed": 97
     },
     {
+        "character": "boothill",
+        "path": "hunt",
+        "element": "physical",
+        "image": "boothill",
+        "stars": "five",
+        "speed": 107
+    },
+    {
         "character": "bronya",
         "path": "abundance",
         "element": "wind",
@@ -264,6 +272,14 @@
         "speed": 98
     },
     {
+        "character": "robin",
+        "path": "harmony",
+        "element": "physical",
+        "image": "robin",
+        "stars": "five",
+        "speed": 102
+    },
+    {
         "character": "ruan mei",
         "path": "harmony",
         "element": "ice",
@@ -342,6 +358,14 @@
         "image": "trailblazer (fire)",
         "stars": "five",
         "speed": 95
+    },
+    {
+        "character": "trailblazer (imaginary)",
+        "path": "preservation",
+        "element": "imaginary",
+        "image": "trailblazer (imaginary)",
+        "stars": "five",
+        "speed": 105
     },
     {
         "character": "trailblazer (physical)",
