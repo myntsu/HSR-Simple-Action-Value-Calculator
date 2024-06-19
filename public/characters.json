@@ -203,6 +203,15 @@
         "speed": 103
     },
     {
+        "character": "jiaoqiu",
+        "path": "nihility",
+        "element": "fire",
+        "image": "jiaoqiu",
+        "stars": "five",
+        "speed": 98,
+        "subspeed": 5
+    },
+    {
         "character": "jing yuan",
         "path": "erudition",
         "element": "lightning",
@@ -258,6 +267,14 @@
         "image": "march 7th",
         "stars": "four",
         "speed": 101
+    },
+    {
+        "character": "march 7th • swordmaster",
+        "path": "hunt",
+        "element": "imaginary",
+        "image": "march 7th swordmaster",
+        "stars": "four",
+        "speed": 107
     },
     {
         "character": "misha",
@@ -428,6 +445,13 @@
         "image": "yukong",
         "stars": "four",
         "speed": 107
+    },
+    {
+        "character": "yunli",
+        "path": "destruction",
+        "element": "physical",
+        "image": "yunli",
+        "stars": "five",
+        "speed": 94
     }
-    
 ]
