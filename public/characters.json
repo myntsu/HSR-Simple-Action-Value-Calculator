@@ -112,6 +112,15 @@
         "speed": 106
     },
     {
+        "character": "firefly",
+        "path": "destruction",
+        "element": "fire",
+        "image": "firefly",
+        "stars": "five",
+        "speed": 104,
+        "subspeed": 5
+    },
+    {
         "character": "fu xuan",
         "path": "preservation",
         "element": "quantum",
@@ -184,6 +193,14 @@
         "speed": 103
     },
     {
+        "character": "jade",
+        "path": "erudition",
+        "element": "quantum",
+        "image": "jade",
+        "stars": "five",
+        "speed": 103
+    },
+    {
         "character": "jing yuan",
         "path": "erudition",
         "element": "lightning",
@@ -197,7 +214,8 @@
         "element": "ice",
         "image": "jingliu",
         "stars": "five",
-        "speed": 105
+        "speed": 96,
+        "subspeed": 9
     },
     {
         "character": "kafka",
