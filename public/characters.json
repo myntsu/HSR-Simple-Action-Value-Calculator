@@ -158,7 +158,8 @@
         "element": "physical",
         "image": "hanya",
         "stars": "four",
-        "speed": 119
+        "speed": 110,
+        "subspeed": 9
     },
     {
         "character": "herta",
@@ -190,7 +191,8 @@
         "element": "wind",
         "image": "huohuo",
         "stars": "five",
-        "speed": 103
+        "speed": 98,
+        "subspeed": 5
     },
     {
         "character": "jade",
@@ -295,7 +297,8 @@
         "element": "physical",
         "image": "robin",
         "stars": "five",
-        "speed": 102
+        "speed": 102,
+        "subspeed": 5
     },
     {
         "character": "ruan mei",
@@ -303,7 +306,8 @@
         "element": "ice",
         "image": "ruan mei",
         "stars": "five",
-        "speed": 109
+        "speed": 104,
+        "subspeed": 5
     },
     {
         "character": "sampo",
