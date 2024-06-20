@@ -179,4 +179,23 @@ const { metaDescription, title } = Astro.props;
   .four-stars {
   background: linear-gradient(180deg,#343659,#8a5fcc 53%);
 }
+
+.tooltip {
+  position: absolute;
+  background-color: hsl(var(--background));
+  color: hsl(var(--text));
+  border: 1px solid hsl(var(--darker-text));
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
 </style>

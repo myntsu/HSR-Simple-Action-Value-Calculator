@@ -219,6 +219,7 @@ main {
 
     display: flex;
     gap: .25rem;
+    position: relative;
   }
 
   .form-section :is(input) {
@@ -257,7 +258,7 @@ main {
   }
 
   .form-section .icon.question-mark:is(:hover, :focus-visible) {
-    color: hsl(var(--text));
+    color: hsl(var(--important));
     scale: 1.05;
     cursor: help;
   }
