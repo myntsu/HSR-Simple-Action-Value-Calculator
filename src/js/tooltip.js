@@ -5,20 +5,32 @@ class Tooltip {
         el.addEventListener('mouseenter', this.showTooltip.bind(this));
         el.addEventListener('mouseleave', this.hideTooltip.bind(this));
         el.addEventListener('focus', this.showTooltip.bind(this));
-        el.addEventListener('blur', this.hideTooltip.bind(this));
         el.addEventListener('touchstart', this.showTooltip.bind(this));
         el.addEventListener('touchend', this.hideTooltip.bind(this));
       });
+      document.addEventListener('click', this.handleDocumentClick.bind(this));
+    }
+  
+    toggleTooltip(event) {
+      event.stopPropagation();
+      if (event.target.tooltip) {
+        this.hideTooltip(event);
+      } else {
+        this.showTooltip(event);
+      }
     }
   
     showTooltip(event) {
+      event.stopPropagation();
+      if (event.target.tooltip) return;
+  
       const tooltipText = event.target.getAttribute('data-tooltip-text');
       const tooltip = document.createElement('div');
       tooltip.classList.add('tooltip');
       tooltip.innerHTML = tooltipText;
   
       event.target.parentElement.appendChild(tooltip);
-      
+  
       this.positionTooltip(event.target, tooltip);
       event.target.tooltip = tooltip;
       setTimeout(() => tooltip.classList.add('show'), 10);
@@ -28,9 +40,21 @@ class Tooltip {
       const tooltip = event.target.tooltip;
       if (tooltip) {
         tooltip.classList.remove('show');
-        setTimeout(() => event.target.parentElement.removeChild(tooltip), 200);
+        setTimeout(() => {
+          if (tooltip && tooltip.parentElement) {
+            tooltip.parentElement.removeChild(tooltip);
+          }
+        }, 200);
         event.target.tooltip = null;
       }
+    }
+  
+    handleDocumentClick(event) {
+      this.tooltipElements.forEach(el => {
+        if (el.tooltip && !el.contains(event.target) && !el.tooltip.contains(event.target)) {
+          this.hideTooltip({ target: el });
+        }
+      });
     }
   
     positionTooltip(element, tooltip) {

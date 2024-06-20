@@ -253,6 +253,9 @@ main {
   }
 
   .form-section .icon.question-mark {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: -1rem;
     width: calc(var(--substat-width) - var(--base-width) - .25rem);
     color: hsl(var(--text) / .8);
   }
