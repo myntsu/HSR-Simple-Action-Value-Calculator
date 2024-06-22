@@ -220,6 +220,10 @@ main {
     display: flex;
   }
 
+  .input-wrapper:has(.traces) input {
+    flex: 1;
+  }
+
   .form-section :is(input) {
     width: 100%;
 
@@ -256,13 +260,13 @@ main {
   }
 
   .traces {
+    flex: 2;
     display: flex;
     gap: .5rem;
     color: hsl(var(--text) / .5);
     padding-inline-start: .5rem;
     border-radius: .25rem;
-    font-size: .9rem;
-    font-weight: 900;
+    cursor: default;
   }
 
   .traces .svg-container {
@@ -276,11 +280,15 @@ main {
   .traces [data-traces] {
     display: flex;
     align-items: center;
+    width: 100%;
     color: hsl(var(--background));
-    background-color: hsl(var(--text));
+    background-color: hsl(0 0% 85%);
     padding-inline: .5rem;
     border-radius: .25rem;
     cursor: not-allowed;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 1rem;
   }
 
   .submit-wrapper {
@@ -371,6 +379,18 @@ main {
       margin-block-end: 1rem;
     }
 
+    .form-section > div {
+      flex-wrap: wrap;
+    }
+
+    .form-section > div > * {
+      flex: 1 0 100%;
+    }
+
+    .form-section > div input {
+      height: 4ch;
+    }
+    
     .form-section .presets-container:has(#characters-preset) {
       display: block;
     }
