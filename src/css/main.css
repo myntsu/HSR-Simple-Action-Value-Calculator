@@ -260,7 +260,7 @@ main {
   }
 
   .traces {
-    flex: 2;
+    flex: 0;
     display: flex;
     gap: .5rem;
     color: hsl(var(--text) / .5);
@@ -279,8 +279,9 @@ main {
 
   .traces [data-traces] {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 3rem;
     color: hsl(var(--background));
     background-color: hsl(0 0% 85%);
     padding-inline: .5rem;
@@ -289,6 +290,7 @@ main {
     font-family: monospace;
     font-weight: 900;
     font-size: 1rem;
+    text-align: center;
   }
 
   .submit-wrapper {
