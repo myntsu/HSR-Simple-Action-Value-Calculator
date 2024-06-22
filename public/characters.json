@@ -118,7 +118,7 @@
         "image": "firefly",
         "stars": "five",
         "speed": 104,
-        "subspeed": 5
+        "traces": 5
     },
     {
         "character": "fu xuan",
@@ -159,7 +159,7 @@
         "image": "hanya",
         "stars": "four",
         "speed": 110,
-        "subspeed": 9
+        "traces": 9
     },
     {
         "character": "herta",
@@ -192,7 +192,7 @@
         "image": "huohuo",
         "stars": "five",
         "speed": 98,
-        "subspeed": 5
+        "traces": 5
     },
     {
         "character": "jade",
@@ -209,7 +209,7 @@
         "image": "jiaoqiu",
         "stars": "five",
         "speed": 98,
-        "subspeed": 5
+        "traces": 5
     },
     {
         "character": "jing yuan",
@@ -226,7 +226,7 @@
         "image": "jingliu",
         "stars": "five",
         "speed": 96,
-        "subspeed": 9
+        "traces": 9
     },
     {
         "character": "kafka",
@@ -315,7 +315,7 @@
         "image": "robin",
         "stars": "five",
         "speed": 102,
-        "subspeed": 5
+        "traces": 5
     },
     {
         "character": "ruan mei",
@@ -324,7 +324,7 @@
         "image": "ruan mei",
         "stars": "five",
         "speed": 104,
-        "subspeed": 5
+        "traces": 5
     },
     {
         "character": "sampo",
