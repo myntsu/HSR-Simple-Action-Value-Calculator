@@ -180,8 +180,21 @@ const { metaDescription, title } = Astro.props;
   background: linear-gradient(180deg,#343659,#8a5fcc 53%);
 }
 
+.tooltip-action {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  position: relative;
+}
+
+.tooltip-action:is(:hover) {
+  cursor: help;
+}
+
 .tooltip {
   position: absolute;
+  top: 0;
+  left: -15px;
+  right: -15px;
   background-color: hsl(var(--background));
   color: hsl(var(--text));
   border: 1px solid hsl(var(--darker-text));
@@ -193,13 +206,10 @@ const { metaDescription, title } = Astro.props;
   pointer-events: none;
   transition: opacity 0.2s;
   opacity: 0;
+  text-align: center;
 }
 
 .tooltip.show {
   opacity: 1;
-}
-
-.relative-container {
-  position: relative;
 }
 </style>
