@@ -1,5 +1,3 @@
-// cyclesBonusPresets.js
-
 export function handlePresetButtons() {
   let presetButtons = document.querySelectorAll('.presets-buttons');
   let resetButton = document.querySelector('#simple-mode');
@@ -13,7 +11,7 @@ export function handlePresetButtons() {
       let inputId = this.getAttribute('data-input');
       let input = document.querySelector(`input#${inputId}`);
       let sameGroupButtons = document.querySelectorAll(`.presets-buttons[data-input='${inputId}']`);
-      let traces = parseInt(this.getAttribute('data-traces')) || 0; // Ensure traces is a number
+      let traces = parseInt(this.getAttribute('data-traces')) || 0;
 
       if (inputId === 'percentSpeed') {
         let cycles = parseInt(this.getAttribute('data-cycles'));
@@ -23,7 +21,7 @@ export function handlePresetButtons() {
           this.classList.remove('pressed');
           this.setAttribute('aria-pressed', 'false');
           updateInputValue(input, currentValue - cycles);
-          updateTracesInput(0); // Reset to default value
+          updateTracesInput(0);
         } else {
           this.classList.add('pressed');
           this.setAttribute('aria-pressed', 'true');
@@ -35,7 +33,6 @@ export function handlePresetButtons() {
           this.classList.remove('pressed');
           updateInputValue(input, 0);
           this.setAttribute('aria-pressed', 'false');
-          // Revert traces to default value if no other buttons are pressed
           let anyPressed = false;
           sameGroupButtons.forEach(otherButton => {
             if (otherButton.classList.contains('pressed')) {
@@ -77,7 +74,6 @@ export function handlePresetButtons() {
         button.setAttribute('aria-pressed', 'false');
       }
     });
-    // Reset traces to default value
     updateTracesInput(0);
   });
 
