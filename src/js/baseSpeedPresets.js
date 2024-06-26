@@ -25,6 +25,12 @@ fetch('characters.json')
     
     button.appendChild(img);
     container.appendChild(button);
+
+    // Debugging: Log the character's traces value
+    console.log(`Character: ${character.character}, Traces: ${character.traces}`);
+    
+    // Update the traces span for each character
+    updateTracesSpan(character.traces);
   });
 
   handlePresetButtons();
@@ -45,3 +51,15 @@ searchField.addEventListener('input', function() {
     }
   });
 });
+
+function updateTracesSpan(traces) {
+  let tracesSpan = document.querySelector('span[data-traces]');
+  // Debugging: Check if the span element is found
+  if (tracesSpan) {
+    // Debugging: Log the traces value being set
+    console.log(`Updating traces span to: +${traces || 0}`);
+    tracesSpan.textContent = `+${traces || 0}`;
+  } else {
+    console.log('Traces span not found');
+  }
+}

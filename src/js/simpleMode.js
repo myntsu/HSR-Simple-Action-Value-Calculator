@@ -3,8 +3,6 @@ const simpleModeElements = document.querySelectorAll('[data-simple-mode]');
 const speedInputLabel = document.querySelector('.speed-input label');
 const speedInputSVG = document.querySelector('.speed-input .svg-container');
 const form = document.querySelector('form');
-
-// Add these lines
 const baseSpeedTitle = document.querySelector('[data-simple-mode-title="base-speed"]');
 const cyclesTitle = document.querySelector('[data-simple-mode-title="cycles"]');
 
