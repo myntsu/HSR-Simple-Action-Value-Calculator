@@ -220,10 +220,6 @@ main {
     display: flex;
   }
 
-  .input-wrapper:has(.traces) input {
-    flex: 1;
-  }
-
   .form-section :is(input) {
     width: 100%;
 
@@ -257,40 +253,6 @@ main {
   .form-section label:is(.focused) {
     translate: 0 0;
     transition: translate 150ms linear;
-  }
-
-  .traces {
-    flex: 0;
-    display: flex;
-    gap: .5rem;
-    color: hsl(var(--text) / .5);
-    padding-inline-start: .5rem;
-    border-radius: .25rem;
-    cursor: default;
-  }
-
-  .traces .svg-container {
-    color: currentColor;
-  }
-
-  .traces > span:first-child {
-    align-self: center;
-  }
-
-  .traces [data-traces] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    color: hsl(var(--background));
-    background-color: hsl(0 0% 85%);
-    padding-inline: .5rem;
-    border-radius: .25rem;
-    cursor: not-allowed;
-    font-family: monospace;
-    font-weight: 900;
-    font-size: 1rem;
-    text-align: center;
   }
 
   .submit-wrapper {
