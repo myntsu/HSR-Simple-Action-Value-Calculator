@@ -5,8 +5,9 @@ document.getElementById('submit').addEventListener('click', () => {
   const substats = Number(document.getElementById('substats').value);
   const advanceForward = Number(document.getElementById('advanceForward').value) / 100;
   const totalCycles = Number(document.getElementById('cycles').value);
+  const traces = Number(document.getElementById('traces').value);
 
-  let totalSpeed = baseSpeed * (1 + percentSpeed) + flatSpeed + substats;
+  let totalSpeed = baseSpeed * (1 + percentSpeed) + flatSpeed + substats + traces;
   let actionValue = 10000 / totalSpeed;
 
   let cyclesContainer = document.getElementById('cycles-container');
