@@ -294,7 +294,7 @@ main {
   }
 
   #result {
-    display: grid;
+    display: none;
     width: 100%;
     padding: 1rem;
     color: hsl(var(--darker-text));

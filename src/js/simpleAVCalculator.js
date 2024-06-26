@@ -61,4 +61,6 @@ document.getElementById('submit').addEventListener('click', () => {
   document.getElementById('total-speed').innerHTML = `<span>Total speed</span> ${totalSpeed.toFixed(2)}`;
   document.getElementById('action-value').innerHTML = `<span>Action value</span> ${actionValue.toFixed(2)}`;
   document.getElementById('total-actions').innerHTML = `<span>Total actions</span> ${totalActions}`;
+
+  document.getElementById('result').style.display = 'grid';
 });
