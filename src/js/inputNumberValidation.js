@@ -1,6 +1,7 @@
 function validateInputValues() {
   let characterInput = document.querySelector('#character');
   let flatSpeedInput = document.querySelector('#flatSpeed');
+  let tracesInput = document.querySelector('#traces');
   let percentSpeedInput = document.querySelector('#percentSpeed');
   let subStatsInput = document.querySelector('#substats');
   let advanceForwardInput = document.querySelector('#advanceForward');
@@ -16,6 +17,7 @@ function validateInputValues() {
 
   characterInput.addEventListener('change', enforceMinMaxValue(50, 1000));
   flatSpeedInput.addEventListener('change', enforceMinMaxValue(0, 1000));
+  tracesInput.addEventListener('change', enforceMinMaxValue(0, 100));
   percentSpeedInput.addEventListener('change', enforceMinMaxValue(0, 200));
   subStatsInput.addEventListener('change', enforceMinMaxValue(0, 1000));
   advanceForwardInput.addEventListener('change', enforceMinMaxValue(0, 100));
