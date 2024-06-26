@@ -30,6 +30,7 @@ main {
     gap: .5rem;
     justify-content: flex-end;
     align-items: center;
+    margin-block-start: 1rem;
   }
 
   .simple-mode-wrapper span {
@@ -219,6 +220,10 @@ main {
 
     display: flex;
   }
+  
+  .input-wrapper:has(.icon) input {
+    border-radius: .25rem 0 0 .25rem;
+  }
 
   .form-section :is(input) {
     width: 100%;
@@ -234,14 +239,12 @@ main {
   }
 
   .form-section .icon {
-    --base-width: 3rem;
-    --substat-width: 7rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: var(--base-width);
-    color: hsl(var(--text) / .5);
-    border-radius: .25rem;
+    padding-inline: .5rem;
+    color: black !important;
+    background-color: hsl(var(--darker-text));
+    border-radius: 0 .25rem .25rem 0;
     font-weight: 900;
     user-select: none;
   }
