@@ -1,0 +1,344 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+
+// CSS import
+import "../css/test.css";
+---
+
+<Layout metaDescription="Ease your brain from any calculation. Input the SPD and voilah!" title="Action Value Calculator">
+  <main>
+    <section>
+      <div class="content">
+        <h1>Action Value Calculator</h1>
+
+        <hr />
+
+        <div class="simple-mode-wrapper" title="Simple mode keeps the same functionality, but instead you can simply add the Total speed instead">
+          <span>Simple mode</span>
+          <button id="simple-mode" aria-label="Toggle simple mode"></button>
+        </div>
+        <form id="actionValueCalculator">
+          
+          <!-- Base speed -->
+          <div class="form-section">
+            <h2 data-simple-mode-title="base-speed">1. Choose the base speed</h2>
+            <div data-simple-mode>
+              <label
+                class="search-label"
+                for="searchCharacter">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="M15.5 10.23q-1.567 0-2.65-1.08q-1.08-1.083-1.08-2.65t1.08-2.65t2.65-1.08t2.65 1.081q1.08 1.082 1.08 2.649q0 .675-.209 1.237q-.21.561-.567 1.01l2.961 2.96q.14.141.15.345t-.15.363t-.353.16t-.354-.16l-2.962-2.961q-.448.396-1.038.586t-1.208.19m0-1q1.146 0 1.938-.792q.793-.792.793-1.938t-.793-1.938t-1.938-.793t-1.938.793q-.793.792-.793 1.938t.793 1.938t1.938.793M4.615 21q-.69 0-1.152-.462T3 19.385V6.615q0-.69.463-1.152T4.615 5h4.473q.349 0 .566.276t.17.624q-.018.177-.024.36t-.006.36q0 2.378 1.656 3.982t4.075 1.604q.437 0 .883-.063t.907-.193l1.168 1.09q.255.218.386.532t.131.657v5.156q0 .69-.462 1.152T17.385 21z"
+                    ></path></svg
+                  >
+                </span>
+                Search
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="searchCharacter"
+                  id="searchCharacter"
+                  placeholder="Sparkle"
+                />
+                <button class="x-button" aria-label="Clear search">
+                  <div class="svg-container">
+                    <svg data-search-svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"/></svg>                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="presets-container" data-simple-mode>
+              <p aria-label="Presets"></p>
+              <div
+                id="characters-preset"
+                class="presets">
+              </div>
+            </div>
+            <div class="speed-input">
+              <label for="character">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><g fill="none"
+                      ><path
+                        d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                      ></path><path
+                        fill="currentColor"
+                        d="M18.026 3.902a1 1 0 0 0-.717-.489c-.41 0-.853.324-1.327.673c-.117.086-.236.173-.357.258c-.542.377-1.164.72-1.696.828c-.83.17-1.783-.069-2.547-.41c-.87-.401-1.373.522-1.762 1.236c-.073.133-.142.26-.208.369c-.29.473-.655 1.037-1.07 1.606a1 1 0 0 0-1.04 1.313c-.308.378-.6.74-.877 1.087A1 1 0 0 0 5.29 11.84c-1.072 1.433-1.81 2.598-2.236 3.635c-.36.88-.514 1.703-.447 2.542c.067.827.342 1.597.727 2.376c.522 1.055 1.802 1.344 2.739.803l14.722-8.5a2 2 0 0 0 .732-2.732l-.5-.866l-6.062 3.5a1 1 0 0 1-1-1.732l6.062-3.5z"
+                      ></path></g
+                    ></svg
+                  >
+                </span>
+                Base speed
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="character"
+                  value="100"
+                  min="0"
+                  max="500"
+                />
+              </div>
+            </div>
+            <div data-simple-mode>
+              <label for="traces">
+                <span class="svg-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m20.5 10l.5-2h-4l1-4h-2l-1 4h-4l1-4h-2L9 8H5l-.5 2h4l-1 4h-4L3 16h4l-1 4h2l1-4h4l-1 4h2l1-4h4l.5-2h-4l1-4zm-7 4h-4l1-4h4z"/></svg>
+                </span>
+                Traces
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="traces"
+                  value="0"
+                  min="0"
+                  max="50"
+                />
+              </div>
+            </div>
+            <div data-simple-mode>
+              <label for="substats">
+                <span class="svg-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M17.75 22q-.325 0-.537-.213T17 21.25t.213-.537t.537-.213h1.75v-.75h-.75q-.325 0-.537-.213T18 19t.213-.537t.537-.213h.75v-.75h-1.75q-.325 0-.537-.213T17 16.75t.213-.537t.537-.213H20q.425 0 .713.288T21 17v1q0 .425-.288.713T20 19q.425 0 .713.288T21 20v1q0 .425-.288.713T20 22zm0-7q-.325 0-.537-.213T17 14.25v-2q0-.425.288-.712T18 11.25h1.5v-.75h-1.75q-.325 0-.537-.213T17 9.75t.213-.537T17.75 9H20q.425 0 .713.288T21 10v1.75q0 .425-.288.713T20 12.75h-1.5v.75h1.75q.325 0 .538.213t.212.537t-.213.538t-.537.212zm1.5-7q-.325 0-.537-.213T18.5 7.25V3.5h-.75q-.325 0-.537-.213T17 2.75t.213-.537T17.75 2h1.5q.325 0 .538.213T20 2.75v4.5q0 .325-.213.538T19.25 8M4 19q-.425 0-.712-.288T3 18t.288-.712T4 17h10q.425 0 .713.288T15 18t-.288.713T14 19zm0-6q-.425 0-.712-.288T3 12t.288-.712T4 11h10q.425 0 .713.288T15 12t-.288.713T14 13zm0-6q-.425 0-.712-.288T3 6t.288-.712T4 5h10q.425 0 .713.288T15 6t-.288.713T14 7z"/></svg>                </span>
+                Substats
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="substats"
+                  value="0"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="advanceForward">
+                <span class="svg-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M2.5 16.125v-8.25q0-.45.3-.725t.7-.275q.125 0 .275.025t.275.125l6.2 4.15q.225.15.338.363T10.7 12t-.112.463t-.338.362l-6.2 4.15q-.125.1-.275.125t-.275.025q-.4 0-.7-.275t-.3-.725m10 0v-8.25q0-.45.3-.725t.7-.275q.125 0 .275.025t.275.125l6.2 4.15q.225.15.338.363T20.7 12t-.112.463t-.338.362l-6.2 4.15q-.125.1-.275.125t-.275.025q-.4 0-.7-.275t-.3-.725"/></svg>
+                </span>
+                <span class="tooltip-action">
+                  <span data-tooltip="true" data-tooltip-text="<b>Adv. forward</b> only works on the very first turn of this character.">Adv. Forward</span>
+                </span>
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="advanceForward"
+                  value="0"
+                  min="0"
+                  max="100"
+                />
+                <div class="icon">%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonuses -->
+          <div class="form-section" data-simple-mode>
+            <h2>2. Add bonuses <span class="optional">(optional)</span></h2>
+            <div class="presets-container">
+              <p aria-label="Presets"></p>
+              <div class="presets speed-presets">
+                <div>
+                  <button
+                    class="presets-buttons"
+                    data-cycles="25"
+                    data-input="flatSpeed"
+                    >Boots</button
+                  >
+                  <button
+                    class="presets-buttons"
+                    data-cycles="6"
+                    data-input="percentSpeed"
+                    >Hackerspace/Musketeer</button
+                  >
+                  <button
+                  class="presets-buttons"
+                  data-cycles="6"
+                  data-input="percentSpeed"
+                  >Kalpagni</button
+                >
+                </div>
+                <div>
+                  <button
+                    class="presets-buttons"
+                    data-cycles="10"
+                    data-input="percentSpeed"
+                    >Ruan Mei</button
+                  >
+                  <button
+                    class="presets-buttons"
+                    data-cycles="12"
+                    data-input="percentSpeed"
+                    >Huohuo (E1)</button
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="flatSpeed">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="m7.4 16l3.05-3.05l2 2L16 11.425V13h2V8h-5v2h1.575l-2.125 2.125l-2-2L6 14.6zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21z"
+                    ></path></svg
+                  >
+                </span>
+                Flat bonus
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="flatSpeed"
+                  value="0"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="percentSpeed">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2V5a2 2 0 0 0-2-2M8.83 7.05c.98 0 1.77.79 1.77 1.78c0 .98-.79 1.77-1.77 1.77c-.99 0-1.78-.79-1.78-1.77c0-.99.79-1.78 1.78-1.78M15.22 17c-.98 0-1.77-.8-1.77-1.78s.79-1.77 1.77-1.77s1.78.79 1.78 1.77S16.2 17 15.22 17m-6.72.03L7 15.53L15.53 7l1.5 1.5z"
+                    ></path></svg
+                  >
+                </span>
+                Percent bonus
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="percentSpeed"
+                  value="0"
+                />
+                <div class="icon">%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cycles -->
+          <div class="form-section">
+            <h2 data-simple-mode-title="cycles">3. Choose the number of cycles</h2>
+            <div class="presets-container">
+              <p></p>
+              <div class="presets">
+                <button
+                  class="presets-buttons"
+                  data-cycles="5"
+                  data-input="cycles"
+                  >Memory of Chaos</button
+                >
+                <button
+                  class="presets-buttons"
+                  data-cycles="3"
+                  data-input="cycles"
+                  >Pure Fiction</button
+                >
+              </div>
+            </div>
+
+            <div>
+              <label for="cycles">
+                <span class="svg-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    ><path
+                      fill="currentColor"
+                      d="M12 17q1.9 0 3.3-1.25t1.65-3.1q.05-.275-.175-.462T16.25 12q-.275 0-.513.175t-.287.45q-.225 1.225-1.187 2.05T12 15.5q-1.45 0-2.475-1.025T8.5 12t1.025-2.475T12 8.5h.075l-.7.725q-.2.225-.213.525t.213.525t.538.225t.537-.225l2.1-2.1q.15-.15.15-.35t-.15-.35L12.425 5.35q-.225-.225-.525-.225t-.525.225t-.225.538t.225.537l.55.575q-2.05.05-3.488 1.5T7 12q0 2.075 1.463 3.538T12 17m0 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                    ></path></svg
+                  >
+                </span>
+                Total cycles
+              </label>
+              <div class="input-wrapper">
+                <input
+                  type="number"
+                  id="cycles"
+                  value="0"
+                  min="0"
+                  max="8"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="submit-wrapper">
+            <div class="submit-button">
+              <input
+                type="button"
+                value="calculate"
+                id="submit"
+              />
+            </div>
+          </div>
+        </form>
+
+        <div id="result">
+          <div
+            class="result-data"
+            id="total-speed">
+            <span>Total speed</span> 0
+          </div>
+          <div
+            class="result-data"
+            id="action-value">
+            <span>Action value</span> 0
+          </div>
+          <div
+            class="result-data"
+            id="total-actions">
+            <span>Total actions</span> 0
+          </div>
+          <hr />
+          <div>
+            <div id="cycles-container">
+              <div class="result-data">
+                <span class="title-value">Cycle 0</span>
+                0 actions
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  import "../js/simpleAVCalculator.js";
+  import "../js/baseSpeedPresets.js";
+  import "../js/cyclesBonusPresets.js";
+  import "../js/inputNumberValidation.js";
+  import "../js/simpleMode.js";
+  import "../js/updatingValues.js";
+  import "../js/tooltip.js";
+</script>
+

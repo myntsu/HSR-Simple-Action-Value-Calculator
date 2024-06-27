@@ -1,0 +1,413 @@
+main {
+    min-height: 100%;
+    padding-block: 5rem;
+    background-color: hsl(var(--background) / .95);
+  }
+
+  h1 {
+    color: hsl(var(--important));
+    text-align: center;
+  }
+
+  h2 {
+    margin-block: .5em;
+  }
+
+  h3 {
+    color: hsl(var(--darker-text));
+    margin-block-end: 0.25em;
+  }
+
+  .content {
+    max-width: 600px;
+    margin-inline: auto;
+    padding: 1rem;
+    z-index: 0;
+  }
+
+  .simple-mode-wrapper {
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-block-start: 1rem;
+  }
+
+  .simple-mode-wrapper span {
+    color: hsl(var(--text) / .5);
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-family: monospace;
+  }
+
+  #simple-mode {
+    padding: .75rem 1.5rem;
+    background-color: hsl(var(--text) / .7);
+    border: 2px solid hsl(var(--text));
+    border-radius: 99999px;
+
+    font-size: .9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    position: relative;
+  }
+
+  #simple-mode:is(:active, .simple-mode) {
+    background-color: hsl(var(--secondary));
+  }
+
+  #simple-mode::after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    translate: 50% 47.5%;
+    width: 1.3rem;
+    aspect-ratio: 1;
+    inset: 2px;
+    background-color: hsl(var(--text));
+    border-radius: inherit;
+
+    transition: translate 200ms ease-in-out;
+  }
+
+  #simple-mode:is(:active, .simple-mode)::after {
+    box-shadow: none;
+    translate: 160% 47.5%;
+    background-color: hsl(var(--text));
+  }
+
+  #simple-mode:is(:hover, :focus-visible):not(.simple-mode) {
+    outline: 2px solid hsl(var(--text) / .5);
+    outline-offset: 2px;
+  }
+
+  .content form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-block-end: 2rem;
+  }
+
+  form > :nth-child(n + 3):nth-child(-n + 3) {
+    margin-block-end: 1rem;
+  }
+
+  .form-section {
+    flex: 1 0 100%;
+
+    display: grid;
+    gap: .25rem;
+  }
+
+  .form-section > div {
+    display: flex;
+    gap: .5rem;
+  }
+
+  #characters-preset {
+    --image-size: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--image-size), 1fr));
+    place-items: start;
+    padding-block: .5rem;
+    height: calc(var(--image-size) * 2.5);
+    overflow-y: auto;
+    gap: .5rem
+  }
+
+  .character-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+  }
+
+  #characters-preset:is(:hover) .presets-buttons {
+    opacity: .5;
+  }
+
+  #characters-preset .presets-buttons:is(:hover) {
+    opacity: 1 !important;
+  }
+
+  #characters-preset .presets-buttons {
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  #characters-preset:has(.presets-buttons:is(.pressed)) .presets-buttons {
+    opacity: .5;
+  }
+
+  #characters-preset .presets-buttons:is(.pressed) {
+    opacity: 1 !important;
+  }
+
+  .presets-container:has(#characters-preset) p {
+    align-self: flex-start;
+  }
+
+  .form-section > div:has(input:is(:focus, :focus-visible)) :is(label, .icon) {
+    color: hsl(var(--important));
+    transition: color 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .form-section .search-label {
+    color: hsl(var(--darker-text));
+  }
+
+  .form-section :is(label) {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 13ch;
+    color: hsl(var(--dark-900));
+  }
+
+  .form-section :is(.presets, .presets > div){
+    flex: 1 0 0;
+    display: flex;
+    gap: .25rem;
+  }
+
+  .form-section .presets.speed-presets {
+    flex-direction: column;
+  }
+
+  .presets-container p {
+    display: flex;
+    align-items: center;
+    width: 13ch;
+    color: hsl(var(--darker-text));
+  }
+
+  .presets-buttons {
+    flex: 1;
+    padding: .3rem .5rem;
+    color: hsl(var(--text) / .7);
+    background-color: hsl(var(--dark-700));
+    border: none;
+    border-radius: .25rem;
+    font-size: .9rem;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .presets-buttons:is(:active) {
+    scale: .95;
+  }
+
+  .presets-buttons:is(:hover, :focus-visible) {
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-900));
+    transition: background-color 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .presets-buttons:is(.pressed) {
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-300));
+  }
+
+  .presets-buttons:is(.pressed):active {
+    scale: 1;
+  }
+
+  .form-section .input-wrapper {
+    flex: 1 0 0;
+
+    display: flex;
+  }
+
+  .x-button {
+    display: grid;
+    place-items: center;
+    padding-inline: .5rem;
+    border: none;
+    border-radius: 0 .25rem .25rem 0;
+    background-color: hsl(var(--darker-text));
+    font-size: 1.2rem;
+    font-family: monospace;
+    cursor: pointer;
+  }
+
+  .x-button:is(:hover, :focus-visible) {
+    color: hsl(var(--dark-700));
+  }
+
+  .x-button .svg-container {
+    width: 40px;
+    aspect-ratio: 1;
+  }
+  
+  .x-button .svg-container svg {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .input-wrapper:has(.icon, .x-button) :is(input) {
+    border-radius: .25rem 0 0 .25rem;
+  }
+
+  .form-section :is(input) {
+    width: 100%;
+
+    padding-inline-start: 0.5rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: hsl(var(--darker-text));
+
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+
+  .form-section .icon {
+    display: flex;
+    align-items: center;
+    padding-inline: .5rem;
+    color: black !important;
+    background-color: hsl(var(--darker-text));
+    border-radius: 0 .25rem .25rem 0;
+    font-weight: 900;
+    user-select: none;
+  }
+
+  .form-section input:is(:focus, :focus-visible) {
+    background-color: hsl(var(--important-900));
+  }
+
+  .form-section label:is(.focused) {
+    translate: 0 0;
+    transition: translate 150ms linear;
+  }
+
+  .submit-wrapper {
+    width: 100%;
+
+    display: flex;
+    gap: .5rem;
+  }
+
+  .submit-button {
+    flex: 1 0 0;
+
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  #submit {
+    margin-inline: auto;
+    padding: 0.5rem 1rem;
+    background: hsl(var(--important));
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 0 hsl(var(--text));
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: monospace;
+  }
+
+  #submit:is(:active) {
+    translate: 2px 2px;
+    box-shadow: none;
+  }
+
+  #result {
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    color: hsl(var(--darker-text));
+    /* background-color: hsl(var(--dark-900) / .5); */
+    border-radius: .5rem;
+  }
+
+  #result > * {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  #result hr {
+    margin-block-end: .5rem;
+  }
+
+  #result :is(.result-data) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    margin-block-end: .25rem;
+  }
+
+  #result span:is(.title-value) {
+    min-width: 11ch;
+    color: hsl(var(--background));
+    background-color: hsl(var(--important-700));
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  #result .bonus-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .15rem;
+    background-color: hsl(var(--secondary));
+    font-weight: 900;
+  }
+  
+  /* Media query */
+  @media (max-width: 570px) {
+    form > :nth-child(n + 1):not(:last-child) {
+      margin-block-end: 1rem;
+    }
+
+    .form-section > div {
+      flex-wrap: wrap;
+    }
+
+    .form-section > div > * {
+      flex: 1 0 100%;
+    }
+
+    .form-section > div input {
+      height: 4ch;
+    }
+    
+    .form-section .presets-container:has(#characters-preset) {
+      display: block;
+    }
+
+    .presets-container p {
+      display: none;
+    }
+
+    .presets, .presets > div {
+      flex-wrap: wrap;
+    }
+
+    .presets .presets-buttons {
+      flex: 1;
+      text-wrap: nowrap;
+    }
+
+    .submit-wrapper p {
+      display: none;
+    }
+
+    #submit {
+      margin-inline-end: 0 !important;
+      margin-inline: auto !important;
+    }
+  }
