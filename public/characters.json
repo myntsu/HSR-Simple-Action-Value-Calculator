@@ -309,6 +309,14 @@
         "speed": 98
     },
     {
+        "character": "rappa",
+        "path": "erudition",
+        "element": "imaginary",
+        "image": "rappa",
+        "stars": "five",
+        "speed": 96
+    },
+    {
         "character": "robin",
         "path": "harmony",
         "element": "physical",
@@ -367,6 +375,14 @@
         "speed": 101
     },
     {
+        "character": "sunday",
+        "path": "harmony",
+        "element": "imaginary",
+        "image": "sunday",
+        "stars": "five",
+        "speed": 96
+    },
+    {
         "character": "sushang",
         "path": "hunt",
         "element": "physical",
@@ -381,6 +397,15 @@
         "image": "tingyun",
         "stars": "four",
         "speed": 112
+    },
+    {
+        "character": "tingyun • fugue",
+        "path": "nihility",
+        "element": "fire",
+        "image": "tingyun fugue",
+        "stars": "four",
+        "speed": 102,
+        "traces": 14
     },
     {
         "character": "topaz & numby",
