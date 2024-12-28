@@ -112,6 +112,14 @@
         "speed": 106
     },
     {
+        "character": "feixiao",
+        "path": "hunt",
+        "element": "wind",
+        "image": "feixiao",
+        "stars": "five",
+        "speed": 112
+    },
+    {
         "character": "firefly",
         "path": "destruction",
         "element": "fire",
@@ -235,6 +243,14 @@
         "image": "kafka",
         "stars": "five",
         "speed": 100
+    },
+    {
+        "character": "lingsha",
+        "path": "abundance",
+        "element": "fire",
+        "image": "lingsha",
+        "stars": "five",
+        "speed": 98
     },
     {
         "character": "luka",
