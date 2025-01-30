@@ -8,6 +8,14 @@
         "speed": 101
     },
     {
+        "character": "aglaea",
+        "path": "remembrance",
+        "element": "lightning",
+        "image": "aglaea",
+        "stars": "five",
+        "speed": 102
+    },
+    {
         "character": "argenti",
         "path": "destruction",
         "element": "physical",
@@ -301,6 +309,23 @@
         "speed": 96
     },
     {
+        "character": "moze",
+        "path": "hunt",
+        "element": "lightning",
+        "image": "moze",
+        "stars": "four",
+        "speed": 111
+    },
+    {
+        "character": "mydei",
+        "path": "destruction",
+        "element": "imaginary",
+        "image": "mydei",
+        "stars": "five",
+        "speed": 95,
+        "traces": 5
+    },
+    {
         "character": "natasha",
         "path": "abundance",
         "element": "physical",
@@ -407,6 +432,15 @@
         "speed": 100
     },
     {
+        "character": "the herta",
+        "path": "erudition",
+        "element": "ice",
+        "image": "the herta",
+        "stars": "five",
+        "speed": 99,
+        "traces": 5
+    },
+    {
         "character": "tingyun",
         "path": "harmony",
         "element": "lightning",
@@ -454,6 +488,22 @@
         "image": "trailblazer (physical)",
         "stars": "five",
         "speed": 100
+    },
+    {
+        "character": "trailblazer (remembrance)",
+        "path": "remembrance",
+        "element": "ice",
+        "image": "trailblazer (remembrance)",
+        "stars": "five",
+        "speed": 103
+    },
+    {
+        "character": "tribbie",
+        "path": "harmony",
+        "element": "quantum",
+        "image": "tribbie",
+        "stars": "five",
+        "speed": 96
     },
     {
         "character": "welt",
